@@ -1,0 +1,12 @@
+/* The inside of carousel*/
+.carousel-inner{
+    text-align:center ; /* Carousel image set centered in the middle */
+    width: 100%; /* Images will be at it's 100% width (300px)*/
+    height: auto; /* Automatically adjust it's heightto allow its content to be displayed correctly */
+  
+}   
+
+/* Carousel  */
+.carousel{
+    background-color:rgba(0, 0, 0, 0.2) /* Sets that dark blue ish color background for the carousel */
+}

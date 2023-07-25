@@ -1,0 +1,117 @@
+{% extends "base.html" %} {% block title %}Subjects{% endblock %} {% block content
+    %}
+  
+
+<h1 style="background-color: #CAFF9E;"> Mathematics </h1>
+<hr> 
+<p style="background-color: #CAFF9E">Mathematics is the science and study of quality, structure, space, and change. Mathematicians seek out patterns, formulate new conjectures, and establish truth by rigorous deduction from appropriately chosen axioms and definitions.le to companies, it's no wonder that marketers are turning to artificial intelligence (AI) to help them manage their campaigns. AI can help create more effective campaigns by bringing together all the different aspects of a campaign, from customer segmentation to media and creative optimization to automating follow -up emails and messages. In a similar way, sales teams are using AI tools to close more deals by using machine learning to understand what makes each lead or account unique, allowing sales reps to go back-and-forth with prospects in ways that will be most effective for them. By using AI tools like these, companies can streamline their processes and experience better results.”
+With just a bit of polishing, you have a clear, concise, and informative paragraph for any of your team’s text-based campaigns.
+“With so many different marketing and sales platforms available to companies, it's no wonder that marketers are turning to artificial intelligence (AI) to help them manage their campaigns. AI can help create more effective campaigns by bringing together all the different aspects of a campaign, from customer segmentation to media and creative optimization to automating follow -up emails and messages. In a similar way, sales teams are using AI tools to close more deals by using machine learning to understand what makes each lead or account unique, allowing sales reps to go back-and-forth with prospects in ways that will be most effective for them. By using AI tools like these, companies can streamline their processes and experience better results.”
+With just a bit of polishing, you have a clear, concise, and informative paragraph for any of your team’s text-based campaigns.
+“With so many different marketing and sales platforms available to companies, it's no wonder that marketers are turning to artificial intelligence (AI) to help them manage their campaigns. AI can help create more effective campaigns by bringing together all the different aspects of a campaign, from customer segmentation to media and creative optimization to automating follow -up emails and messages. In a similar way, sales teams are using AI tools to close more deals by using machine learning to understand what makes each lead or account unique, allowing sales reps to go back-and-forth with prospects in ways that will be most effective for them. By using AI tools like these, companies can streamline their processes and experience better results.”
+With just a bit of polishing, you have a clear, concise, and informative paragraph for any of your team’s text-based campaigns.</p>
+...</p>
+
+
+<div container>
+  <!-- Carousel -->
+ <div id="demo" class="carousel slide" data-ride="carousel">
+    
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="static/images/english.jpg" alt="Vaporeon">
+   
+    </div>
+
+  <!-- Image 2 on Carousel-->
+    <div class="carousel-item">
+      <img src="static/images/maths.jpg" alt="Mewtwo">
+      
+    </div>
+    
+   <!-- Image 3 on Carousel-->
+    <div class="carousel-item">
+      <img src="static/images/science.jpg" alt="Pikachu">
+      
+
+
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+</div>
+
+
+<form action="/action_page.php">
+  <label for="cars">Choose a car:</label>
+  <select name="cars" id="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="opel">Opel</option>
+    <option value="audi">Audi</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<p>Click the "Submit" button and the form-data will be sent to a page on the 
+server called "action_page.php".</p>
+
+
+
+<!-- Line code-->
+<hr class="line1">
+<br>
+
+  <!-- Code for this button -->
+  <button onclick="topFunction()" id="myBtn" title="Go to top"> Top</button>
+  
+  <script>
+  //Get the button
+  var mybutton = document.getElementById("myBtn");
+  
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  </script>
+
+
+
+
+
+<div align="center">
+    <a href="/subjects"
+      ><button type="button" class="btn btn-primary btn-lg">Back</button></a
+    >
+  </div>
+
+{% endblock %}
