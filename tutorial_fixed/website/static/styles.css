@@ -1,12 +1,66 @@
+
+/* Heading 1 */
+h1{
+    text-align: center; /*Centers the text */
+    font-family: Georgia, serif /* Font is set to Georgia, serif */
+}
+
 /* The inside of carousel*/
 .carousel-inner{
     text-align:center ; /* Carousel image set centered in the middle */
     width: 100%; /* Images will be at it's 100% width (300px)*/
-    height: auto; /* Automatically adjust it's heightto allow its content to be displayed correctly */
+    height: 100; /* Automatically adjust it's heightto allow its content to be displayed correctly */
   
 }   
 
 /* Carousel  */
 .carousel{
-    background-color:rgba(0, 0, 0, 0.2) /* Sets that dark blue ish color background for the carousel */
+    background-color: green /* Sets that dark blue ish color background for the carousel */
+}
+
+/* Button */
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color:rgba(0, 0, 0, 0.2); /* Set a background color */
+    color: black; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    font-weight: bold; /*Font is bold */
+
+}
+
+
+/* Navigation bar */
+.navbar{    
+    font-family: Georgia, serif; /* Navigation bar set to font family sets to Georgia, serif*/
+    font-weight: bold; /* Navigation bar text sets to bold*/
+    border-radius: 10px; /* The outer border edge and space between navbar is 10px */
+    
+}
+
+
+/* When hovering over a link in the nav bar*/
+.nav-item:hover{
+    border-top: 4px solid #8FBC8F; /* When hovered over a link, the border of the top link becomes light green */
+    border-bottom: 4px solid #8FBC8F; /* When hovered over a link, the border of the bottom link becomes light green */
+}
+
+/* Navbar distance between links*/
+.navbar-nav > li{
+    padding-left:30px; /* Distance between links is 30px to the left */
+    padding-right:30px; /* Distance between links is 30px to the right */
+
+}
+
+/* When you hover over the button */
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
 }

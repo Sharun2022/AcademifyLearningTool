@@ -31,8 +31,8 @@ def login():
 @auth.route("/sign-up", methods=['GET', 'POST'])
 def sign_up():
     if current_user.is_authenticated:
-        return redirect(url_for('home'))
-    form = RegistrationForm
+        return redirect(url_for('views.home'))
+    form = RegistrationForm()
     if form.validate_on_submit():
         hashed_password = generate_password_hash((form.password.data), method='sha256')
         user = User(username=form.username.data, email=form.email.data, password=hashed_password)
@@ -40,7 +40,7 @@ def sign_up():
         db.session.commit()
         flash('Your account has been created! You can nor log in', 'success')
         return redirect(url_for('auth.login'))
-    return render_template('signup.html',form=form, user=current_user )
+    return render_template('signup.html',form=form, user=current_user)
     
 
 
