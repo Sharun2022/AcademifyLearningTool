@@ -38,7 +38,7 @@ def sign_up():
         user = User(username=form.username.data, email=form.email.data, password=hashed_password)
         db.session.add(user)
         db.session.commit()
-        flash('Your account has been created! You can nor log in', 'success')
+        flash('Your account has been created! You can now log in', 'success')
         return redirect(url_for('auth.login'))
     return render_template('signup.html',form=form, user=current_user)
     

@@ -9,7 +9,7 @@ h1{
 .carousel-inner{
     text-align:center ; /* Carousel image set centered in the middle */
     width: 100%; /* Images will be at it's 100% width (300px)*/
-    height: 100; /* Automatically adjust it's heightto allow its content to be displayed correctly */
+    height: 100%; /* Automatically adjust it's heightto allow its content to be displayed correctly */
   
 }   
 
@@ -42,7 +42,7 @@ h1{
 .navbar{    
     font-family: Georgia, serif; /* Navigation bar set to font family sets to Georgia, serif*/
     font-weight: bold; /* Navigation bar text sets to bold*/
-    border-radius: 10px; /* The outer border edge and space between navbar is 10px */
+    border-radius: px; /* The outer border edge and space between navbar is 10px */
     
 }
 
