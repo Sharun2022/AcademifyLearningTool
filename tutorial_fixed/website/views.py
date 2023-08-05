@@ -141,7 +141,7 @@ def save_picture(forms_picture):
     path = Path("website/static/profile_pics")
     random_hex = secrets.token_hex(8) 
     _,f_ext = os.path.splitext(form_picture.filename)
-    picture_fn = randomhex_+ f_ext
+    picture_fn = random_hex + f_ext
     picture_path = os.path.join(path, picture_fn)
     output_size = (125, 125)
     i = Image.open(form_picture)
@@ -160,6 +160,9 @@ def account():
             current_user.image_file = picture_file
         current_user.username = form.username.data
         current_user.email = form.email.data
+        db.session.commit()
+        flash('Your account has been updated')
+        return redirect(url_for('views.account'))
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.email.data = current_user.email
