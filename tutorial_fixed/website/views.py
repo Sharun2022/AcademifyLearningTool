@@ -5,7 +5,7 @@ import secrets
 from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
 from flask_login import login_required, current_user
 from .models import Post, User, Comment, Like
-from .forms import RegistrationForm, UpdateAccountForm
+from .forms import RegistrationForm, UpdateAccountForm, PostForm
 from . import db
 
 views = Blueprint("views", __name__)
@@ -36,19 +36,17 @@ def subjects():
 @views.route("/create-post", methods=['GET', 'POST'])
 @login_required
 def create_post():
-    if request.method == "POST":
-        text = request.form.get('text')
+    form = PostForm()
+    if form.validate_on_submit():
+        title = form.title.data
+        text = form.text.data
+        post = Post(title=title, text=text, author=current_user.id)
+        db.session.add(post)
+        db.session.commit()
+        flash('Post created!', category='success')
+        return redirect(url_for('views.blog'))
 
-        if not text:
-            flash('Post cannot be empty', category='error')
-        else:
-            post = Post(text=text, author=current_user.id)
-            db.session.add(post)
-            db.session.commit()
-            flash('Post created!', category='success')
-            return redirect(url_for('views.blog'))
-
-    return render_template('create_post.html', user=current_user)
+    return render_template('create_post.html', form=form, user=current_user)
 
 
 @views.route("/delete-post/<id>")
