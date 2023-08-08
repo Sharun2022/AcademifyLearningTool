@@ -1,8 +1,10 @@
 
 /* Heading 1 */
 h1{
+    color: darkgreen;
     text-align: center; /*Centers the text */
     font-family: Georgia, serif /* Font is set to Georgia, serif */
+    
 }
 
 /* The inside of carousel*/
@@ -76,4 +78,33 @@ h1{
 .post-title{
     font-weight: 500;
     line-height: 1.2;
+}
+
+
+
+
+.card-footer{
+    background-color:#98fb98 ;    
+}
+
+.p{
+    background-color: purple;
+}
+
+
+.box{
+    width: 320px;
+    padding: 10px;
+    border: 5px solid #003300;
+    margin: 0;
+    text-align: center;
+}
+
+
+.page{
+    background-color: rgb(197, 228, 197);
+}
+
+body {
+    background-color: rgb(197, 228, 197) !important;
 }
