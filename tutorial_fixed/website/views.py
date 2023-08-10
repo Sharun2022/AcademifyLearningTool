@@ -10,6 +10,14 @@ from . import db
 
 views = Blueprint("views", __name__)
 
+def not_blank(comment):
+    valid = False
+    while not valid:
+        text = comment.strip()
+        if text !="":   
+            return text 
+        else:
+            break
 
 @views.route("/")
 @views.route("/home")
@@ -30,7 +38,6 @@ def blog():
 @login_required
 def subjects():
     return render_template("subjects.html", user=current_user)
-
 
 
 @views.route("/create-post", methods=['GET', 'POST'])
@@ -82,7 +89,8 @@ def posts(username):
 @views.route("/create-comment/<post_id>", methods=['POST'])
 @login_required
 def create_comment(post_id):
-    text = request.form.get('text')
+    comment = request.form.get('text')
+    text = not_blank(comment)
 
     if not text:
         flash('Comment cannot be empty.', category='error')
