@@ -10,14 +10,15 @@ from . import db
 
 views = Blueprint("views", __name__)
 
+# Defines function called not_blank that has a parameter called 'comment'
 def not_blank(comment):
-    valid = False
-    while not valid:
-        text = comment.strip()
-        if text !="":   
-            return text 
-        else:
-            break
+    valid = False # Defines valid as being a false input
+    while not valid: # When not valid loop
+        text = comment.strip() # Remove leading and trailing whitespace
+        if text !="": # Test if text to whitespace
+            return text # Return text
+        else: # If valid input
+            break # Break loop
 
 @views.route("/")
 @views.route("/home")
@@ -85,12 +86,16 @@ def posts(username):
     posts = user.posts
     return render_template("posts.html", user=current_user, posts=posts, username=username)
 
-
+# Defines a route for creating a comment in a post 
+# Uses HTTP methods (POSTS) for user to submit a comment in this case
 @views.route("/create-comment/<post_id>", methods=['POST'])
-@login_required
+# Sets the route for the creation of a comment under the posts ID
+@login_required # Requires the user to be logged in
 def create_comment(post_id):
-    comment = request.form.get('text')
-    text = not_blank(comment)
+    comment = request.form.get('text') # Defines comment
+    # as the request to get the text the user has entered
+    text = not_blank(comment) # Define text as using the 
+    # as not blank in terms of the comment that the user is trying to post
 
     if not text:
         flash('Comment cannot be empty.', category='error')
