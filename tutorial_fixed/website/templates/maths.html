@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %} Maths {% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question and Answer Game</title>
+</head>
+<body>
+    <h1>Question and Answer Game</h1>
+    
+    <div id="questions">
+        <div class="question">
+            <p>Q1: What is the capital of France?</p>
+            <input type="text" class="answerInput" data-answer="Paris">
+            <div class="result"></div>
+        </div>
+        
+        <div class="question">
+            <p>Q2: Which planet is known as the Red Planet?</p>
+            <input type="text" class="answerInput" data-answer="Mars">
+            <div class="result"></div>
+        </div>
+        
+        <div class="question">
+            <p>Q3: What is 2 + 2?</p>
+            <input type="text" class="answerInput" data-answer="4">
+            <div class="result"></div>
+        </div>
+        
+        <button id="submitAll">Submit Answers</button>
+    </div>
+    
+    <script>
+        const submitAllButton = document.getElementById("submitAll");
+        
+        submitAllButton.addEventListener("click", () => {
+            const questionDivs = document.querySelectorAll(".question");
+            questionDivs.forEach(questionDiv => {
+                const answerInput = questionDiv.querySelector(".answerInput");
+                const resultDiv = questionDiv.querySelector(".result");
+                const userAnswer = answerInput.value.trim().toLowerCase();
+                const correctAnswer = answerInput.getAttribute("data-answer").toLowerCase();
+        
+                if (userAnswer === correctAnswer) {
+                    resultDiv.textContent = "Correct!";
+                } else {
+                    resultDiv.textContent = `Wrong. The correct answer is ${correctAnswer}.`;
+                }
+            });
+        });
+    </script>
+
+<footer class="py-5 bg-green">
+    <div class="footer"><p class="m-0 text-center text-white">Copyright &copy; Academify 2023</p></div>
+</footer>
+{% endblock %}

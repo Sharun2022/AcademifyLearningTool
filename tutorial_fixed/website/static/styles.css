@@ -49,6 +49,9 @@ h1{
 
   
   
+.quiz-card{
+    text-align: center;
+}
 
 /* Navigation bar */
 .navbar{    
