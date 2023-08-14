@@ -43,7 +43,12 @@ h1{
 
 }
 
+.bg-green {
+    background-color: green;
+  }
 
+  
+  
 
 /* Navigation bar */
 .navbar{    
