@@ -19,7 +19,7 @@
   <!-- The slideshow -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="static/images/english.jpg" alt="Vaporeon">
+      <img src="static/images/sac1.jpg" alt="Vaporeon">
    
     </div>
 
@@ -50,30 +50,40 @@
 
 
 <hr> 
-<p style="background-color: #CAFF9E">Mathematics is the science and study of quality, structure, space, and change. Mathematicians seek out patterns, formulate new conjectures, and establish truth by rigorous deduction from appropriately chosen axioms and definitions.le to companies, it's no wonder that marketers are turning to artificial intelligence (AI) to help them manage their campaigns. AI can help create more effective campaigns by bringing together all the different aspects of a campaign, from customer segmentation to media and creative optimization to automating follow -up emails and messages. In a similar way, sales teams are using AI tools to close more deals by using machine learning to understand what makes each lead or account unique, allowing sales reps to go back-and-forth with prospects in ways that will be most effective for them. By using AI tools like these, companies can streamline their processes and experience better results.”
-With just a bit of polishing, you have a clear, concise, and informative paragraph for any of your team’s text-based campaigns.
-“With so many different marketing and sales platforms available to companies, it's no wonder that marketers are turning to artificial intelligence (AI) to help them manage their campaigns. AI can help create more effective campaigns by bringing together all the different aspects of a campaign, from customer segmentation to media and creative optimization to automating follow -up emails and messages. In a similar way, sales teams are using AI tools to close more deals by using machine learning to understand what makes each lead or account unique, allowing sales reps to go back-and-forth with prospects in ways that will be most effective for them. By using AI tools like these, companies can streamline their processes and experience better results.”
-With just a bit of polishing, you have a clear, concise, and informative paragraph for any of your team’s text-based campaigns.
-“With so many different marketing and sales platforms available to companies, it's no wonder that marketers are turning to artificial intelligence (AI) to help them manage their campaigns. AI can help create more effective campaigns by bringing together all the different aspects of a campaign, from customer segmentation to media and creative optimization to automating follow -up emails and messages. In a similar way, sales teams are using AI tools to close more deals by using machine learning to understand what makes each lead or account unique, allowing sales reps to go back-and-forth with prospects in ways that will be most effective for them. By using AI tools like these, companies can streamline their processes and experience better results.”
-With just a bit of polishing, you have a clear, concise, and informative paragraph for any of your team’s text-based campaigns.</p>
-...</p>
 
 
+<div class="quiz-card">
+  <h5>Question 1:</h5>
+  <p>What is the capital of France?</p>
+  <label><input type="radio" name="q1" value="a"> Paris</label>
+  <label><input type="radio" name="q1" value="b"> London</label>
+  <label><input type="radio" name="q1" value="c"> Berlin</label>
+  <button onclick="checkAnswer('q1')">Submit Answer</button>
+  <p id="feedback"></p>
+</div>
 
-<form action="/action_page.php">
-  <label for="cars">Choose a car:</label>
-  <select name="cars" id="cars">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="opel">Opel</option>
-    <option value="audi">Audi</option>
-  </select>
-  <br><br>
-  <input type="submit" value="Submit">
-</form>
+<script>
+function checkAnswer(questionId) {
+  const selectedAnswer = document.querySelector(`input[name=${questionId}]:checked`);
+  if (!selectedAnswer) {
+    return; // No answer selected
+  }
+  
+  const correctAnswer = 'a'; // The correct answer value
+  const feedback = document.getElementById('feedback');
+  
+  if (selectedAnswer.value === correctAnswer) {
+    feedback.textContent = 'Correct!';
+    // Increment user's score
+  } else {
+    feedback.textContent = 'Incorrect. Try again!';
+  }
+  
+  // Hide current question and show the next one
+  // Update the user's score
+}
+</script>
 
-<p>Click the "Submit" button and the form-data will be sent to a page on the 
-server called "action_page.php".</p>
 
 
 
@@ -113,11 +123,14 @@ server called "action_page.php".</p>
       <img src="static/images/mathss.png" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title"> Mathematics </h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"> Mathematics is the science and study of quality, structure, space, and change. 
+          Mathematicians seek out patterns, formulate new conjectures, and establish truth by rigorous deduction from appropriately chosen axioms and definitions. 
+          Year 7 to 13 Mathematics standards avaliable below!</p>
       </div>
       <div class="card-footer">
         <small class="text-muted">Last updated 3 mins ago</small>
       </div>
+      <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!"> Standards</a></div>  
     </div>
   </div>
   <div class="col">
@@ -125,11 +138,14 @@ server called "action_page.php".</p>
       <img src="static/images/sciencee.png" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title"> Science </h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">Science is the pursuit and application of knowledge and understanding of the natural and social world following a systematic methodology based on evidence. 
+          Scientific methodology includes the following: Objective observation: Measurement and data (possibly although not necessarily using mathematics as a tool).
+          Year 7 to 13 Science standards avaliable below!</p>
       </div>
       <div class="card-footer">
         <small class="text-muted">Last updated 3 mins ago</small>
       </div>
+      <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!"> Standards </a></div>
     </div>
   </div>
   <div class="col">
@@ -137,11 +153,14 @@ server called "action_page.php".</p>
       <img src="static/images/englishh.jpeg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title"> English </h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <p class="card-text">English Language is the in-depth study of written and verbal communication in English. It explores the building blocks of the language, covering aspects such as phonetics, semantics and pragmatics. 
+          If you're interested in the nuts and bolts of the language, this just might be the subject for you!
+          Year 7 to 13 English standards avaliable below! </p>
       </div>
       <div class="card-footer">
         <small class="text-muted">Last updated 3 mins ago</small>
       </div>
+      <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!"> Standards </a></div>
     </div>
   </div>
 </div> 
