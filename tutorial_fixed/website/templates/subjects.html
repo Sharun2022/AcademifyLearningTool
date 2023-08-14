@@ -52,40 +52,29 @@
 <hr> 
 
 
-<div class="quiz-card">
-  <h5>Question 1:</h5>
-  <p>What is the capital of France?</p>
-  <label><input type="radio" name="q1" value="a"> Paris</label>
-  <label><input type="radio" name="q1" value="b"> London</label>
-  <label><input type="radio" name="q1" value="c"> Berlin</label>
-  <button onclick="checkAnswer('q1')">Submit Answer</button>
-  <p id="feedback"></p>
+
+
+  <!-- Call to Action-->
+  <div class="card text-black my-5 py-4 text-center" style="background-color: #98fb98;">
+    <div class="card-body"><p class="text-black m-0"> Welcome to the world of learning and academic growth! At school, subjects form the foundation of education, offering a diverse range of knowledge and skills. From mathematics to science, English, and beyond, each subject contributes to shaping a well-rounded student.
+
+      However, we understand that mastering these subjects can be a challenge for many students. This is where Academify comes in to revolutionize the learning experience. Our innovative online learning tool is designed to empower students in excelling at each subject.
+      
+      Mathematics, often considered daunting, becomes a playground of discovery with Academify's interactive lessons and engaging exercises. We break down complex concepts into digestible modules, ensuring students grasp even the most intricate details.
+      
+      Science, the realm of curiosity, turns into a hands-on adventure. Our virtual labs and simulations provide a safe space for exploration, allowing students to conduct experiments and unravel the mysteries of the natural world.
+      
+      English, the language of expression, becomes a canvas for creativity. Through personalized writing prompts, grammar quizzes, and reading materials, Academify enhances language skills, helping students articulate their thoughts with confidence.
+      
+      No matter the subject, Academify's gamification approach makes learning enjoyable and immersive. Earn rewards, challenge friends, and track progress as you journey through your academic pursuits. Our mentors are always ready to guide you, providing assistance whenever you hit a roadblock.
+      
+      Join us at Academify and unlock your full potential in every subject. From acing exams to igniting a lifelong love for learning, we're here to support you every step of the way. Embrace the power of education, explore the depths of subjects, and excel with Academify!
+      
+      
+      
+      
+      </p></div>
 </div>
-
-<script>
-function checkAnswer(questionId) {
-  const selectedAnswer = document.querySelector(`input[name=${questionId}]:checked`);
-  if (!selectedAnswer) {
-    return; // No answer selected
-  }
-  
-  const correctAnswer = 'a'; // The correct answer value
-  const feedback = document.getElementById('feedback');
-  
-  if (selectedAnswer.value === correctAnswer) {
-    feedback.textContent = 'Correct!';
-    // Increment user's score
-  } else {
-    feedback.textContent = 'Incorrect. Try again!';
-  }
-  
-  // Hide current question and show the next one
-  // Update the user's score
-}
-</script>
-
-
-
 
 <!-- Line code-->
 <hr class="line1">
