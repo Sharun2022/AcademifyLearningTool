@@ -49,9 +49,18 @@ h1{
 
   
   
-.quiz-card{
+.question{
     text-align: center;
+    margin-bottom: 20px;
+    
 }
+
+.center-button {
+    display: block;
+    margin: 0 auto;
+}
+
+
 
 /* Navigation bar */
 .navbar{    
@@ -211,3 +220,37 @@ body {
     margin-bottom: 10px;
 }
 
+/* styles.css */
+
+.question {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+}
+
+.question p {
+    font-weight: bold;
+}
+
+.answerInput {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+.result {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+#submitAll {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
