@@ -39,6 +39,11 @@ def blog():
 def subjects():
     return render_template("subjects.html", user=current_user)
 
+@views.route("/years")
+@login_required
+def years():
+    return render_template("years.html", user=current_user)
+
 @views.route("/maths")
 @login_required
 def maths():
