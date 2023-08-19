@@ -65,12 +65,15 @@
         
                 if (userAnswer === correctAnswer) {
                     resultDiv.textContent = "Correct!";
+                    resultDiv.classList.add("correct"); // Add 'correct' class
                 } else {
                     resultDiv.textContent = `Wrong. The correct answer is ${correctAnswer}.`;
+                    resultDiv.classList.remove("correct"); // Remove 'correct' class
                 }
             });
         });
     </script>
+    
 
     <!-- Code for this button -->
     <button onclick="topFunction()" id="myBtn" title="Go to top"> &#8593; </button>

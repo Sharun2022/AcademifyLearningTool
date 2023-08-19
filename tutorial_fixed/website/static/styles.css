@@ -220,13 +220,17 @@ body {
     margin-bottom: 10px;
 }
 
-/* styles.css */
 
 .question {
     border: 1px solid #ccc;
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px auto; /* Center horizontally and maintain top and bottom margin */
     background-color: #f9f9f9;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .question p {
@@ -241,16 +245,40 @@ body {
 }
 
 .result {
-    margin-top: 5px;
+    margin-top: 10px;
     font-weight: bold;
+    color: #d9534f; /* Incorrect answer color */
+}
+
+.result.correct {
+    color: #5cb85c; /* Correct answer color */
 }
 
 #submitAll {
-    margin-top: 10px;
-    padding: 8px 16px;
+    margin-top: 20px;
+    padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#submitAll:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.question:hover {
+    background-color: rgb(132, 248, 132);
+}
+
+
+#questions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
 }
