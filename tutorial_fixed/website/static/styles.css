@@ -3,7 +3,6 @@
 h1{
     color: darkgreen;
     text-align: center; /*Centers the text */
-    font-family: Georgia, serif; /* Font is set to Georgia, serif */
 
 }
 
@@ -64,7 +63,6 @@ h1{
 
 /* Navigation bar */
 .navbar{    
-    font-family: Georgia, serif; /* Navigation bar set to font family sets to Georgia, serif*/
     font-weight: bold; /* Navigation bar text sets to bold*/
     border-radius: px; /* The outer border edge and space between navbar is 10px */
     
@@ -224,7 +222,7 @@ body {
 .question {
     border: 1px solid #ccc;
     padding: 10px;
-    margin: 10px auto; /* Center horizontally and maintain top and bottom margin */
+    margin: 10px auto; 
     background-color: #f9f9f9;
     width: 200px;
     height: 200px;
@@ -246,7 +244,7 @@ body {
 
 .result {
     margin-top: 10px;
-    font-weight: bold;
+    font-weight: bold; /* Bold text */
     color: #d9534f; /* Incorrect answer color */
 }
 

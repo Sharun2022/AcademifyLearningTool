@@ -44,10 +44,10 @@ def subjects():
 def years():
     return render_template("years.html", user=current_user)
 
-@views.route("/maths")
+@views.route("/year8_maths")
 @login_required
-def maths():
-    return render_template("maths.html", user=current_user)
+def year8_maths():
+    return render_template("year8_maths.html", user=current_user)
 
 
 
