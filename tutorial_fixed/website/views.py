@@ -39,17 +39,40 @@ def blog():
 def subjects():
     return render_template("subjects.html", user=current_user)
 
-@views.route("/years")
+@views.route("/years_maths")
 @login_required
-def years():
-    return render_template("years.html", user=current_user)
+def years_maths():
+    return render_template("years_maths.html", user=current_user)
 
 @views.route("/year8_maths")
 @login_required
 def year8_maths():
     return render_template("year8_maths.html", user=current_user)
 
+@views.route("/year9_maths")
+@login_required
+def year9_maths():
+    return render_template("year9_maths.html", user=current_user)
 
+@views.route("/year10_maths")
+@login_required
+def year10_maths():
+    return render_template("year10_maths.html", user=current_user)
+
+@views.route("/year11_maths")
+@login_required
+def year11_maths():
+    return render_template("year11_maths.html", user=current_user)
+
+@views.route("/year12_maths")
+@login_required
+def year12_maths():
+    return render_template("year12_maths.html", user=current_user)
+
+@views.route("/year13_maths")
+@login_required
+def year13_maths():
+    return render_template("year13_maths.html", user=current_user)
 
 
 @views.route("/create-post", methods=['GET', 'POST'])
