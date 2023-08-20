@@ -54,6 +54,12 @@ def years_chem():
 def years_eng():
     return render_template("years_eng.html", user=current_user)
 
+@views.route("/years_re")
+@login_required
+def years_re():
+    return render_template("years_re.html", user=current_user)
+
+
 @views.route("/year8_maths")
 @login_required
 def year8_maths():
@@ -68,6 +74,11 @@ def year8_chem():
 @login_required
 def year8_eng():
     return render_template("year8_eng.html", user=current_user)
+
+@views.route("/year8_re")
+@login_required
+def year8_re():
+    return render_template("year8_re.html", user=current_user)
 
 @views.route("/year9_maths")
 @login_required
@@ -84,6 +95,11 @@ def year9_chem():
 def year9_eng():
     return render_template("year9_eng.html", user=current_user)
 
+@views.route("/year9_re")
+@login_required
+def year9_re():
+    return render_template("year9_re.html", user=current_user)
+
 @views.route("/year10_maths")
 @login_required
 def year10_maths():
@@ -98,6 +114,11 @@ def year10_chem():
 @login_required
 def year10_eng():
     return render_template("year10_eng.html", user=current_user)
+
+@views.route("/year10_re")
+@login_required
+def year10_re():
+    return render_template("year10_re.html", user=current_user)
 
 @views.route("/year11_maths")
 @login_required
@@ -114,6 +135,12 @@ def year11_chem():
 def year11_eng():
     return render_template("year11_eng.html", user=current_user)
 
+@views.route("/year11_re")
+@login_required
+def year11_re():
+    return render_template("year11_re.html", user=current_user)
+
+
 @views.route("/year12_maths")
 @login_required
 def year12_maths():
@@ -129,6 +156,11 @@ def year12_chem():
 def year12_eng():
     return render_template("year12_eng.html", user=current_user)
 
+@views.route("/year12_re")
+@login_required
+def year12_re():
+    return render_template("year12_re.html", user=current_user)
+
 @views.route("/year13_maths")
 @login_required
 def year13_maths():
@@ -143,6 +175,12 @@ def year13_chem():
 @login_required
 def year13_eng():
     return render_template("year13_eng.html", user=current_user)
+
+@views.route("/year13_re")
+@login_required
+def year13_re():
+    return render_template("year13_re.html", user=current_user)
+
 
 
 @views.route("/create-post", methods=['GET', 'POST'])
