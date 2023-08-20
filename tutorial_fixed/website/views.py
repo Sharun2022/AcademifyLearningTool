@@ -44,35 +44,70 @@ def subjects():
 def years_maths():
     return render_template("years_maths.html", user=current_user)
 
+@views.route("/years_chem")
+@login_required
+def years_chem():
+    return render_template("years_chem.html", user=current_user)
+
 @views.route("/year8_maths")
 @login_required
 def year8_maths():
     return render_template("year8_maths.html", user=current_user)
+
+@views.route("/year8_chem")
+@login_required
+def year8_chem():
+    return render_template("year8_chem.html", user=current_user)
 
 @views.route("/year9_maths")
 @login_required
 def year9_maths():
     return render_template("year9_maths.html", user=current_user)
 
+@views.route("/year9_chem")
+@login_required
+def year9_chem():
+    return render_template("year9_chem.html", user=current_user)
+
 @views.route("/year10_maths")
 @login_required
 def year10_maths():
     return render_template("year10_maths.html", user=current_user)
+
+@views.route("/year10_chem")
+@login_required
+def year10_chem():
+    return render_template("year10_chem.html", user=current_user)
 
 @views.route("/year11_maths")
 @login_required
 def year11_maths():
     return render_template("year11_maths.html", user=current_user)
 
+@views.route("/year11_chem")
+@login_required
+def year11_chem():
+    return render_template("year11_chem.html", user=current_user)
+
 @views.route("/year12_maths")
 @login_required
 def year12_maths():
     return render_template("year12_maths.html", user=current_user)
 
+@views.route("/year12_chem")
+@login_required
+def year12_chem():
+    return render_template("year12_chem.html", user=current_user)
+
 @views.route("/year13_maths")
 @login_required
 def year13_maths():
     return render_template("year13_maths.html", user=current_user)
+
+@views.route("/year13_chem")
+@login_required
+def year13_chem():
+    return render_template("year13_chem.html", user=current_user)
 
 
 @views.route("/create-post", methods=['GET', 'POST'])
