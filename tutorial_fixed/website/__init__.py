@@ -1,3 +1,5 @@
+"""Creates and configures the Flask App Instance."""
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
