@@ -59,6 +59,16 @@ def years_eng():
 def years_re():
     return render_template("years_re.html", user=current_user)
 
+@views.route("/years_dtg")
+@login_required
+def years_dtg():
+    return render_template("years_dtg.html", user=current_user)
+
+@views.route("/years_phy")
+@login_required
+def years_phy():
+    return render_template("years_phy.html", user=current_user)
+
 
 @views.route("/year8_maths")
 @login_required
@@ -78,7 +88,17 @@ def year8_eng():
 @views.route("/year8_re")
 @login_required
 def year8_re():
-    return render_template("year8_re.html", user=current_user)
+    return render_template("year8_re.html", user=current_user)\
+
+@views.route("/year8_dtg")
+@login_required
+def year8_dtg():
+    return render_template("year8_dtg.html", user=current_user)
+
+@views.route("/year8_phy")
+@login_required
+def year8_phy():
+    return render_template("year8_phy.html", user=current_user)
 
 @views.route("/year9_maths")
 @login_required
@@ -100,6 +120,16 @@ def year9_eng():
 def year9_re():
     return render_template("year9_re.html", user=current_user)
 
+@views.route("/year9_dtg")
+@login_required
+def year9_dtg():
+    return render_template("year9_dtg.html", user=current_user)
+
+@views.route("/year9_phy")
+@login_required
+def year9_phy():
+    return render_template("year9_phy.html", user=current_user)
+
 @views.route("/year10_maths")
 @login_required
 def year10_maths():
@@ -120,6 +150,16 @@ def year10_eng():
 def year10_re():
     return render_template("year10_re.html", user=current_user)
 
+@views.route("/year10_dtg")
+@login_required
+def year10_dtg():
+    return render_template("year10_dtg.html", user=current_user)
+
+@views.route("/year10_phy")
+@login_required
+def year10_phy():
+    return render_template("year10_phy.html", user=current_user)
+
 @views.route("/year11_maths")
 @login_required
 def year11_maths():
@@ -138,7 +178,17 @@ def year11_eng():
 @views.route("/year11_re")
 @login_required
 def year11_re():
-    return render_template("year11_re.html", user=current_user)
+    return render_template("year11_re.html", user=current_user)\
+    
+@views.route("/year11_dtg")
+@login_required
+def year11_dtg():
+    return render_template("year11_dtg.html", user=current_user)
+
+@views.route("/year11_phy")
+@login_required
+def year11_phy():
+    return render_template("year11_phy.html", user=current_user)
 
 
 @views.route("/year12_maths")
@@ -161,6 +211,16 @@ def year12_eng():
 def year12_re():
     return render_template("year12_re.html", user=current_user)
 
+@views.route("/year12_dtg")
+@login_required
+def year12_dtg():
+    return render_template("year12_dtg.html", user=current_user)
+
+@views.route("/year12_phy")
+@login_required
+def year12_phy():
+    return render_template("year12_phy.html", user=current_user)
+
 @views.route("/year13_maths")
 @login_required
 def year13_maths():
@@ -180,6 +240,16 @@ def year13_eng():
 @login_required
 def year13_re():
     return render_template("year13_re.html", user=current_user)
+
+@views.route("/year13_dtg")
+@login_required
+def year13_dtg():
+    return render_template("year13_dtg.html", user=current_user)
+
+@views.route("/year13_phy")
+@login_required
+def year13_phy():
+    return render_template("year13_phy.html", user=current_user)
 
 
 
