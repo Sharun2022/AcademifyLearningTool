@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% block title %} NCEA Level 2 English {% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question and Answer Game</title>
+</head>
+<body>
+    <h1> NCEA Level 2 English Revision </h1>
+    
+        <div id="questions">
+            <div class="question">
+                <p>Q1: True or False: In persuasive writing, logos appeals to emotions and values.
+                </p>
+                <input type="text" class="answerInput" data-answer="False">
+                <div class="result"></div>
+            </div>
+            
+            <div class="question">
+                <p>Q2: True or False: An analogy is a comparison between two things to clarify meaning.
+                </p>
+                <input type="text" class="answerInput" data-answer="True">
+                <div class="result"></div>
+            </div>
+            
+            <div class="question">
+                <p>Q3: True or False: An allegory is a story with a hidden moral or political meaning.
+                </p>
+                <input type="text" class="answerInput" data-answer="True">
+                <div class="result"></div>
+            </div>
+
+            <div class="question">
+                <p>Q4: What's a conclusion that goes beyond the facts given?
+                </p>
+                <input type="text" class="answerInput" data-answer="Inference">
+                <div class="result"></div>
+            </div>
+
+            <div class="question">
+                <p>Q5: What's a figure of speech that combines contradictory terms?
+                </p>
+                <input type="text" class="answerInput" data-answer="Oxymoron">
+                <div class="result"></div>
+            </div>
+
+            <div class="question">
+                <p>Q6: What's a reference to a well-known work of literature, art, or history?
+                </p>
+                <input type="text" class="answerInput" data-answer="Allusion">
+                <div class="result"></div>
+            </div>
+
+            <button id="submitAll" class="center-button">Submit Answers</button>
+        </div>
+    </div>
+    
+    <script>
+        const submitAllButton = document.getElementById("submitAll");
+        
+        submitAllButton.addEventListener("click", () => {
+            const questionDivs = document.querySelectorAll(".question");
+            questionDivs.forEach(questionDiv => {
+                const answerInput = questionDiv.querySelector(".answerInput");
+                const resultDiv = questionDiv.querySelector(".result");
+                const userAnswer = answerInput.value.trim().toLowerCase();
+                const correctAnswer = answerInput.getAttribute("data-answer").toLowerCase();
+        
+                if (userAnswer === correctAnswer) {
+                    resultDiv.textContent = "Correct!";
+                    resultDiv.classList.add("correct"); // Add 'correct' class
+                } else {
+                    resultDiv.textContent = `Wrong. The correct answer is ${correctAnswer}.`;
+                    resultDiv.classList.remove("correct"); // Remove 'correct' class
+                }
+            });
+        });
+    </script>
+    
+
+    <!-- Code for this button -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top"> &#8593; </button>
+  
+    <script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+    <!-- Line code-->
+<hr class="line1">
+<br>
+
+<div align="center" style="margin-bottom: 20px;">
+    <a href="/years_eng">
+    <button type="button" class="btn btn-primary btn-lg">Back</button></a>
+  </div>
+
+<footer class="py-5 bg-green">
+    <div class="footer"><p class="m-0 text-center text-white">Copyright &copy; Academify 2023</p></div>
+</footer>
+{% endblock %}
