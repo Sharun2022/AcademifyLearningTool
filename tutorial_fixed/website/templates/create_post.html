@@ -1,14 +1,20 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
-%}
+<!-- Extends another file named "base.html" -->
+{% extends "base.html" %} 
+<!-- Defined a block named "title" and set the title of the page to Home -->
+{% block title %}Home{% endblock %} {% block content%}
+
 <div class="content-section">
   <form method="POST" action="">
       {{ form.hidden_tag() }}
       <fieldset class="form-group">
+        <!-- Title for the form. -->
           <legend class="border-bottom mb-4">Create a Post</legend>
           <div class="form-group">
+            <!-- Label for the title field-->
               {{ form.title.label(class="form-control-label") }}
               {% if form.title.errors %}
                   {{ form.title(class="form-control form-control-lg is-invalid") }}
+                  <!-- Invalid feedback for title errors -->
                   <div class="invalid-feedback">
                       {% for error in form.title.errors %}
                           <span>{{ error }}</span>
@@ -20,9 +26,11 @@
           </div>
 
           <div class="form-group">
+            <!-- Label for the text field-->
               {{ form.text.label(class="form-control-label") }}
               {% if form.text.errors %}
                   {{ form.text(class="form-control form-control-lg is-invalid") }}
+                <!-- Invalid feedback for title errors -->
                   <div class="invalid-feedback">
                       {% for error in form.text.errors %}
                           <span>{{ error }}</span>
@@ -35,8 +43,10 @@
       </fieldset>
       </br>
       <div class="form-group">
+        <!-- Submit buttom for the create post -->
           {{ form.submit(class="btn btn-outline-info") }}
       </div>
   </form>
 </div>
+<!-- Closes the main content block -->
 {% endblock %}
