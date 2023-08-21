@@ -8,11 +8,13 @@
         <p class="text-secondary">{{ current_user.email }}</p>
     </div>
 </div>
+    <!-- Form for updating account information -->
     <form method="POST" action="" enctype="multipart/form-data">
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Account Information</legend>
             <div class="form-group">
+                <!-- Username field -->
                 {{ form.username.label(class="form-control-label") }}
 
                 {% if form.username.errors %}
@@ -27,6 +29,7 @@
                 {% endif %}
             </div>
             <div class="form-group">
+                <!-- Email field -->
                 {{ form.email.label(class="form-control-label") }}
                 {% if form.email.errors %}
                     {{ form.email(class="form-control form-control-lg is-invalid") }}
@@ -41,6 +44,7 @@
             </div>
         </br>
             <div class="form-group">
+                <!-- Profile picture upload field -->
                 {{ form.picture.label() }}
                 {{ form.picture(class="form-control-file") }}
                 {% if form.picture.errors %}
@@ -52,6 +56,7 @@
         </fieldset>
         </br>
         <div class="form-group">
+            <!-- Submit button -->
             {{ form.submit(class="btn btn-outline-info") }}
         </div>
     </form>

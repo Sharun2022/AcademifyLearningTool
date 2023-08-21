@@ -8,7 +8,7 @@ from flask_login import LoginManager
 db = SQLAlchemy()
 DB_NAME = "database.db"
 
-
+# Creates a function called create_app
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = "helloworld"
