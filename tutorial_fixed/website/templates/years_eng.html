@@ -1,142 +1,153 @@
+<!-- Extends another file named "base.html" -->
 {% extends "base.html" %}
-{% block title %} English Years {% endblock %}
-{% block content %}
-
-
+<!-- Defined a block named "title" and set the title of the page to English Years -->
+{% block title %} English Years {% endblock %}{% block content %}
 <div container>
     <h1> Choose Your English Year Level </h1>
 </div>
 
+<!-- Card layout for Year 8, Year 9, and Year 10 English -->
 <div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- Card for Year 8 English -->
     <div class="col">
-      <div class="card h-100">
-        <img src="static/images/year8.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"> Year 8 English </h5>
-          <p class="card-text"> In Year 8, students in New Zealand focus on 
-            developing their reading comprehension, writing skills, and oral communication. 
-            They explore a range of texts, both fiction and non-fiction, and learn to analyze themes, 
-            characters, and language features.
-          </p>
+        <div class="card h-100">
+            <img src="static/images/year8.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"> Year 8 English </h5>
+                <p class="card-text"> In Year 8, students in New Zealand focus on 
+                    developing their reading comprehension, writing skills, and oral communication. 
+                    They explore a range of texts, both fiction and non-fiction, and learn to analyze themes, 
+                    characters, and language features.
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 24 mins ago</small>
+            </div>
+            <!-- Link to Year 8 English content -->
+            <div class="card-footer"><a class="btn btn-primary btn-sm" href="year8_eng"> Year 8 </a></div>
         </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 24 mins ago</small>
-        </div>
-        <div class="card-footer"><a class="btn btn-primary btn-sm" href="year8_eng"> Year 8 </a></div>  
-      </div>
     </div>
+    <!-- Card for Year 9 English -->
     <div class="col">
-      <div class="card h-100">
-        <img src="static/images/year9.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"> Year 9 English</h5>
-          <p class="card-text">Year 9 English builds on the skills 
-            developed in previous years. Students delve deeper into literary analysis, 
-            practice more complex writing styles, and refine their speaking and listening
-             abilities. They engage with various text types and begin to explore more critical 
-             perspectives.
-          </p>
+        <div class="card h-100">
+            <img src="static/images/year9.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"> Year 9 English</h5>
+                <p class="card-text">Year 9 English builds on the skills 
+                    developed in previous years. Students delve deeper into literary analysis, 
+                    practice more complex writing styles, and refine their speaking and listening
+                    abilities. They engage with various text types and begin to explore more critical 
+                    perspectives.
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 39 mins ago</small>
+            </div>
+            <!-- Link to Year 9 English content -->
+            <div class="card-footer"><a class="btn btn-primary btn-sm" href="year9_eng"> Year 9</a></div>
         </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 39 mins ago</small>
-        </div>
-        <div class="card-footer"><a class="btn btn-primary btn-sm" href="year9_eng"> Year 9</a></div>
-      </div>
     </div>
+    <!-- Card for Year 10 English -->
     <div class="col">
-      <div class="card h-100">
-        <img src="static/images/year10.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"> Year 10 English </h5>
-          <p class="card-text">In Year 10, English continues to strengthen 
-            reading comprehension, writing, and communication skills. Students explore a wider
-             range of texts, including more complex literary works and digital media. 
-             They refine their ability to analyze, interpret, and critically respond to texts.
-          </p>
+        <div class="card h-100">
+            <img src="static/images/year10.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"> Year 10 English </h5>
+                <p class="card-text">In Year 10, English continues to strengthen 
+                    reading comprehension, writing, and communication skills. Students explore a wider
+                    range of texts, including more complex literary works and digital media. 
+                    They refine their ability to analyze, interpret, and critically respond to texts.
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 12 mins ago</small>
+            </div>
+            <!-- Link to Year 10 English content -->
+            <div class="card-footer"><a class="btn btn-primary btn-sm" href="year10_eng"> Year 10 </a></div>
         </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 12 mins ago</small>
-        </div>
-        <div class="card-footer"><a class="btn btn-primary btn-sm" href="year10_eng"> Year 10 </a></div>
-      </div>
     </div>
-  </div> 
-  
-  <!-- Line code-->
-  <hr class="line1">
-  <br>
-  
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-      <div class="card h-100">
-        <img src="static/images/year11.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"> NCEA Level 1 English </h5>
-          <p class="card-text">At NCEA Level 1, students delve further into literary analysis and
-             extended writing tasks. They engage with texts from diverse genres and develop skills in 
-             creating and delivering presentations. Communication skills are honed through 
-             discussions and debates.
-            </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 42 mins ago</small>
-        </div>
-        <div class="card-footer"><a class="btn btn-primary btn-sm" href="year11_eng"> NCEA Level 1</a></div>  
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="static/images/year12.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"> NCEA Level 2 English </h5>
-          <p class="card-text">NCEA Level 2 English involves more in-depth literary study,
-             complex language analysis, and extended writing. Students explore literary themes 
-             and techniques, and they develop advanced research and critical thinking skills. 
-             They also refine their oral communication and presentation abilities.
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 37 mins ago</small>
-        </div>
-        <div class="card-footer"><a class="btn btn-primary btn-sm" href="year12_eng"> NCEA Level 2 </a></div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="static/images/year13.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"> NCEA Level 3 English </h5>
-          <p class="card-text">NCEA Level 3 English focuses on higher-level 
-            literary analysis, synthesis of ideas, and sophisticated writing styles. 
-            Students critically examine literature and language, engage in independent 
-            research projects, and demonstrate advanced oral communication skills through 
-            discussions and presentations.
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 20 mins ago</small>
-        </div>
-        <div class="card-footer"><a class="btn btn-primary btn-sm" href="year13_eng"> NCEA Level 3</a></div>
-      </div>
-    </div>
-  </div> 
-  
-  <!-- Line code-->
-  <hr class="line1">
-  <br>
-  
-  <div align="center" style="margin-bottom: 20px;">
-      <a href="/subjects">
-      <button type="button" class="btn btn-primary btn-lg">Back</button></a>
-    </div>
-  
-  
-    <!-- Footer-->
-    <footer class="py-5 bg-green">
-      <div class="footer"><p class="m-0 text-center text-white">Copyright &copy; Academify 2023</p></div>
-    </footer>
+</div>
 
+<!-- Line code -->
+<hr class="line1">
+<br>
 
+<!-- Card layout for NCEA Level 1, NCEA Level 2, and NCEA Level 3 English -->
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- Card for NCEA Level 1 English -->
+    <div class="col">
+        <div class="card h-100">
+            <img src="static/images/year11.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"> NCEA Level 1 English </h5>
+                <p class="card-text">At NCEA Level 1, students delve further into literary analysis and
+                    extended writing tasks. They engage with texts from diverse genres and develop skills in 
+                    creating and delivering presentations. Communication skills are honed through 
+                    discussions and debates.
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 42 mins ago</small>
+            </div>
+            <!-- Link to NCEA Level 1 English content -->
+            <div class="card-footer"><a class="btn btn-primary btn-sm" href="year11_eng"> NCEA Level 1</a></div>
+        </div>
+    </div>
+    <!-- Card for NCEA Level 2 English -->
+    <div class="col">
+        <div class="card h-100">
+            <img src="static/images/year12.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"> NCEA Level 2 English </h5>
+                <p class="card-text">NCEA Level 2 English involves more in-depth literary study,
+                    complex language analysis, and extended writing. Students explore literary themes 
+                    and techniques, and they develop advanced research and critical thinking skills. 
+                    They also refine their oral communication and presentation abilities.
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 37 mins ago</small>
+            </div>
+            <!-- Link to NCEA Level 2 English content -->
+            <div class="card-footer"><a class="btn btn-primary btn-sm" href="year12_eng"> NCEA Level 2 </a></div>
+        </div>
+    </div>
+    <!-- Card for NCEA Level 3 English -->
+    <div class="col">
+        <div class="card h-100">
+            <img src="static/images/year13.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"> NCEA Level 3 English </h5>
+                <p class="card-text">NCEA Level 3 English focuses on higher-level 
+                    literary analysis, synthesis of ideas, and sophisticated writing styles. 
+                    Students critically examine literature and language, engage in independent 
+                    research projects, and demonstrate advanced oral communication skills through 
+                    discussions and presentations.
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 20 mins ago</small>
+            </div>
+            <!-- Link to NCEA Level 3 English content -->
+            <div class="card-footer"><a class="btn btn-primary btn-sm" href="year13_eng"> NCEA Level 3</a></div>
+        </div>
+    </div>
+</div>
 
+<!-- Line code -->
+<hr class="line1">
+<br>
+
+<!-- Back button -->
+<div align="center" style="margin-bottom: 20px;">
+    <a href="/subjects">
+        <button type="button" class="btn btn-primary btn-lg">Back</button>
+    </a>
+</div>
+
+<!-- Footer -->
+<footer class="py-5 bg-green">
+    <div class="footer"><p class="m-0 text-center text-white">Copyright &copy; Academify 2023</p></div>
+</footer>
 
 {% endblock %}

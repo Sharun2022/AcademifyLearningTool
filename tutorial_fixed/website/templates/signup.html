@@ -1,10 +1,14 @@
-{% extends "base.html" %} {% block title %}Sign Up{% endblock %}
+<!-- Extends another file named "base.html" -->
+{% extends "base.html" %} 
+<!-- Defined a block named "title" and set the title of the page to Sign Up -->
+{% block title %}Sign Up{% endblock %}
 {% block content %}
 <div class="content-section">
     <form method="POST" action="">
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Join Today</legend>
+            <!-- Username field -->
             <div class="form-group">
                 {{ form.username.label(class="form-control-label") }}
 
@@ -19,6 +23,7 @@
                     {{ form.username(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
+            <!-- Email field -->
             <div class="form-group">
                 {{ form.email.label(class="form-control-label") }}
                 {% if form.email.errors %}
@@ -32,6 +37,7 @@
                     {{ form.email(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
+            <!-- Password field -->
             <div class="form-group">
                 {{ form.password.label(class="form-control-label") }}
                 {% if form.password.errors %}
@@ -45,6 +51,7 @@
                     {{ form.password(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
+            <!-- Confirm Password field -->
             <div class="form-group">
                 {{ form.confirm_password.label(class="form-control-label") }}
                 {% if form.confirm_password.errors %}
@@ -60,14 +67,16 @@
             </div>
         </fieldset>
     </br>
+        <!-- Submit button -->
         <div class="form-group">
             {{ form.submit(class="btn btn-outline-info") }}
         </div>
     </form>
 </div>
+<!-- Section for link to login if user has an account -->
 <div class="border-top pt-3">
     <small class="text-muted">
         Already Have An Account? <a class="ml-2" href="{{ url_for('auth.login') }}">Sign In</a>
     </small>
 </div>
-{% endblock content %}
+{% endblock %}

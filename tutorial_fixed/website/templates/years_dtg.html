@@ -1,151 +1,160 @@
+<!-- Extends another file named "base.html" -->
 {% extends "base.html" %}
-{% block title %} Digital Technologies {% endblock %}
-{% block content %}
-
-
+<!-- Defined a block named "title" and set the title of the page to Digital Technologies Years -->
+{% block title %} Digital Technologies Years {% endblock %}{% block content %}
 <div container>
     <h1> Choose Your Digital Technologies Year Level </h1>
 </div>
 
+<!-- Card layout for Year 8, Year 9, and Year 10 Digital Technologies -->
 <div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- Card for Year 8 Digital Technologies -->
     <div class="col">
-      <div class="card h-100">
-        <img src="static/images/year8.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"> Year 8 Digital Technologies  </h5>
-          <p class="card-text">In Year 8, students are introduced to fundamental
-             concepts of Digital Technologies. They explore topics such as computer 
-             programming, digital communication, and data representation. Students 
-             develop basic coding skills and learn to create simple digital solutions using various tools.
+        <div class="card h-100">
+            <img src="static/images/year8.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"> Year 8 Digital Technologies  </h5>
+                <p class="card-text">In Year 8, students are introduced to fundamental
+                    concepts of Digital Technologies. They explore topics such as computer
+                    programming, digital communication, and data representation. Students
+                    develop basic coding skills and learn to create simple digital solutions using various tools.
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 24 mins ago</small>
+            </div>
+            <!-- Link to Year 8 Digital Technologies content -->
+            <div class="card-footer"><a class="btn btn-primary btn-sm" href="year8_dtg"> Year 8 </a></div>
+        </div>
+    </div>
+    <!-- Card for Year 9 Digital Technologies -->
+    <div class="col">
+        <div class="card h-100">
+            <img src="static/images/year9.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"> Year 9 Digital Technologies</h5>
+                <p class="card-text"> During Years 9 and 10, students build upon their
+                    foundational knowledge and engage with more complex concepts.
+                    They delve into topics such as algorithm design, software development,
+                    and user experience design. Students develop a deeper understanding of
+                    coding languages, problem-solving strategies, and ethical considerations
+                    related to technology.
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 39 mins ago</small>
+            </div>
+            <!-- Link to Year 9 Digital Technologies content -->
+            <div class="card-footer"><a class="btn btn-primary btn-sm" href="year9_dtg"> Year 9</a></div>
+        </div>
+    </div>
+    <!-- Card for Year 10 Digital Technologies -->
+    <div class="col">
+        <div class="card h-100">
+            <img src="static/images/year10.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"> Year 10 Digital Technologiess </h5>
+                <p class="card-text"> During Years 9 and 10, students build upon their
+                    foundational knowledge and engage with more complex concepts.
+                    They delve into topics such as algorithm design, software development,
+                    and user experience design. Students develop a deeper understanding of
+                    coding languages, problem-solving strategies, and ethical considerations
+                    related to technology.
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 12 mins ago</small>
+            </div>
+            <!-- Link to Year 10 Digital Technologies content -->
+            <div class="card-footer"><a class="btn btn-primary btn-sm" href="year10_dtg"> Year 10 </a></div>
+        </div>
+    </div>
+</div>
 
+<!-- Line code -->
+<hr class="line1">
+<br>
 
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 24 mins ago</small>
-        </div>
-        <div class="card-footer"><a class="btn btn-primary btn-sm" href="year8_dtg"> Year 8 </a></div>  
-      </div>
-    </div>
+<!-- Card layout for NCEA Level 1, NCEA Level 2, and NCEA Level 3 Digital Technologies -->
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- Card for NCEA Level 1 Digital Technologies -->
     <div class="col">
-      <div class="card h-100">
-        <img src="static/images/year9.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"> Year 9 Digital Technologies</h5>
-          <p class="card-text"> During Years 9 and 10, students build upon their
-             foundational knowledge and engage with more complex concepts. 
-             They delve into topics such as algorithm design, software development, 
-             and user experience design. Students develop a deeper understanding of 
-             coding languages, problem-solving strategies, and ethical considerations 
-             related to technology.
-          </p>
+        <div class="card h-100">
+            <img src="static/images/year11.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"> NCEA Level 1 Digital Technologies </h5>
+                <p class="card-text"> At NCEA Level 1, students have the opportunity to further specialize 
+                    in Digital Technologies. They explore areas like computer science, information systems,
+                    and digital innovation. Students may undertake practical projects involving web 
+                    development, programming, and data analysis, while also examining the societal impacts 
+                    of technology.
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 42 mins ago</small>
+            </div>
+            <!-- Link to NCEA Level 1 Digital Technologies content -->
+            <div class="card-footer"><a class="btn btn-primary btn-sm" href="year11_dtg"> NCEA Level 1</a></div>
         </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 39 mins ago</small>
-        </div>
-        <div class="card-footer"><a class="btn btn-primary btn-sm" href="year9_dtg"> Year 9</a></div>
-      </div>
     </div>
+    <!-- Card for NCEA Level 2 Digital Technologies -->
     <div class="col">
-      <div class="card h-100">
-        <img src="static/images/year10.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"> Year 10 Digital Technologiess </h5>
-          <p class="card-text"> During Years 9 and 10, students build upon their
-            foundational knowledge and engage with more complex concepts. 
-            They delve into topics such as algorithm design, software development, 
-            and user experience design. Students develop a deeper understanding of 
-            coding languages, problem-solving strategies, and ethical considerations 
-            related to technology.
-          </p>
+        <div class="card h-100">
+            <img src="static/images/year12.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"> NCEA Level 2 Digital Technologies </h5>
+                <p class="card-text"> NCEA Level 2 focuses on more advanced 
+                    aspects of Digital Technologies. Students dive into topics
+                    like artificial intelligence, cybersecurity, and software 
+                    engineering. They develop advanced coding skills and work on
+                    more intricate projects that require problem-solving and critical
+                    thinking, while considering the ethical implications of technology use.
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 37 mins ago</small>
+            </div>
+            <!-- Link to NCEA Level 2 Digital Technologies content -->
+            <div class="card-footer"><a class="btn btn-primary btn-sm" href="year12_dtg"> NCEA Level 2 </a></div>
         </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 12 mins ago</small>
-        </div>
-        <div class="card-footer"><a class="btn btn-primary btn-sm" href="year10_dtg"> Year 10 </a></div>
-      </div>
     </div>
-  </div> 
-  
-  <!-- Line code-->
-  <hr class="line1">
-  <br>
-  
-  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- Card for NCEA Level 3 Digital Technologies -->
     <div class="col">
-      <div class="card h-100">
-        <img src="static/images/year11.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"> NCEA Level 1 Digital Technologies </h5>
-          <p class="card-text"> At NCEA Level 1, students have the opportunity to further specialize 
-            in Digital Technologies. They explore areas like computer science, information systems,
-             and digital innovation. Students may undertake practical projects involving web 
-             development, programming, and data analysis, while also examining the societal impacts 
-             of technology.
-            </p>
+        <div class="card h-100">
+            <img src="static/images/year13.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"> NCEA Level 3 Digital Technologies </h5>
+                <p class="card-text"> NCEA Level 3 represents the pinnacle of Digital
+                    Technologies education. Students engage in high-level discussions 
+                    about emerging technologies, digital transformation, and digital 
+                    entrepreneurship. They may work on substantial projects that involve 
+                    designing and developing innovative software solutions, as well as 
+                    critically analyzing the broader impacts of technology on society.
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 20 mins ago</small>
+            </div>
+            <!-- Link to NCEA Level 3 Digital Technologies content -->
+            <div class="card-footer"><a class="btn btn-primary btn-sm" href="year13_dtg"> NCEA Level 3</a></div>
         </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 42 mins ago</small>
-        </div>
-        <div class="card-footer"><a class="btn btn-primary btn-sm" href="year11_dtg"> NCEA Level 1</a></div>  
-      </div>
     </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="static/images/year12.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"> NCEA Level 2 Digital Technologies </h5>
-          <p class="card-text"> NCEA Level 2 focuses on more advanced 
-            aspects of Digital Technologies. Students dive into topics
-            like artificial intelligence, cybersecurity, and software 
-            engineering. They develop advanced coding skills and work on
-            more intricate projects that require problem-solving and critical
-            thinking, while considering the ethical implications of technology use.
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 37 mins ago</small>
-        </div>
-        <div class="card-footer"><a class="btn btn-primary btn-sm" href="year12_dtg"> NCEA Level 2 </a></div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="static/images/year13.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"> NCEA Level 3 Digital Technologies </h5>
-          <p class="card-text"> NCEA Level 3 represents the pinnacle of Digital
-             Technologies education. Students engage in high-level discussions 
-             about emerging technologies, digital transformation, and digital 
-             entrepreneurship. They may work on substantial projects that involve 
-             designing and developing innovative software solutions, as well as 
-             critically analyzing the broader impacts of technology on society.
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 20 mins ago</small>
-        </div>
-        <div class="card-footer"><a class="btn btn-primary btn-sm" href="year13_dtg"> NCEA Level 3</a></div>
-      </div>
-    </div>
-  </div> 
-  
-  <!-- Line code-->
-  <hr class="line1">
-  <br>
-  
-  <div align="center" style="margin-bottom: 20px;">
-      <a href="/subjects">
-      <button type="button" class="btn btn-primary btn-lg">Back</button></a>
-    </div>
-  
-  
-    <!-- Footer-->
-    <footer class="py-5 bg-green">
-      <div class="footer"><p class="m-0 text-center text-white">Copyright &copy; Academify 2023</p></div>
-    </footer>
+</div>
 
+<!-- Line code -->
+<hr class="line1">
+<br>
 
+<!-- Back button -->
+<div align="center" style="margin-bottom: 20px;">
+    <a href="/subjects">
+        <button type="button" class="btn btn-primary btn-lg">Back</button>
+    </a>
+</div>
 
+<!-- Footer -->
+<footer class="py-5 bg-green">
+    <div class="footer"><p class="m-0 text-center text-white">Copyright &copy; Academify 2023</p></div>
+</footer>
 
 {% endblock %}

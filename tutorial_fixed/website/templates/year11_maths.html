@@ -1,116 +1,129 @@
+<!-- Extends another file named "base.html" -->
 {% extends "base.html" %}
-{% block title %} NCEA Level 1 Mathematics {% endblock %}
-{% block content %}
+<!-- Defined a block named "title" and set the title of the page to NCEA Level 1 Mathematics -->
+{% block title %} NCEA Level 1 Mathematics {% endblock %}{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page Title -->
     <title>Question and Answer Game</title>
 </head>
 <body>
+    <!-- Heading Title is NCEA Level 1 Mathematics Revision -->
     <h1> NCEA Level 1 Mathematics Revision </h1>
     
-        <div id="questions">
-            <div class="question">
-                <p>Q1: Solve the inequality 3x + 2 > 8</p>
-                <input type="text" class="answerInput" data-answer="x > 2">
-                <div class="result"></div>
-            </div>
-            
-            <div class="question">
-                <p>Q2:  Calculate 5!</p>
-                <input type="text" class="answerInput" data-answer="120">
-                <div class="result"></div>
-            </div>
-            
-            <div class="question">
-                <p>Q3: Given the data set: 18 , 21 , 24 , 27 , 30, calculate the interquartile range</p>
-                <input type="text" class="answerInput" data-answer="6">
-                <div class="result"></div>
-            </div>
-
-            <div class="question">
-                <p>Q4: Three coins are tossed. What is the probability of getting exactly two heads?</p>
-                <input type="text" class="answerInput" data-answer="3/8">
-                <div class="result"></div>
-            </div>
-
-            <div class="question">
-                <p>Q5: If 3x - y = 7 and 2x + 2y - 10, find x and y (x=?, y=?) </p>
-                <input type="text" class="answerInput" data-answer="x=2, y=1">
-                <div class="result"></div>
-            </div>
-
-            <div class="question">
-                <p>Q6: Calculate 3! - 2</p>
-                <input type="text" class="answerInput" data-answer="4">
-                <div class="result"></div>
-            </div>
-
-            <button id="submitAll" class="center-button">Submit Answers</button>
+    <!-- All the questions from 1 to 6 with answers -->
+    <div id="questions">
+        <div class="question">
+            <!-- Q1: Solve the inequality 3x + 2 > 8 -->
+            <p>Q1: Solve the inequality 3x + 2 > 8</p>
+            <input type="text" class="answerInput" data-answer="x > 2">
+            <div class="result"></div>
         </div>
+        
+        <div class="question">
+            <!-- Q2: Calculate 5! -->
+            <p>Q2: Calculate 5!</p>
+            <input type="text" class="answerInput" data-answer="120">
+            <div class="result"></div>
+        </div>
+        
+        <div class="question">
+            <!-- Q3: Given the data set: 18 , 21 , 24 , 27 , 30, calculate the interquartile range -->
+            <p>Q3: Given the data set: 18 , 21 , 24 , 27 , 30, calculate the interquartile range</p>
+            <input type="text" class="answerInput" data-answer="6">
+            <div class="result"></div>
+        </div>
+
+        <div class="question">
+            <!-- Q4: Three coins are tossed. What is the probability of getting exactly two heads? -->
+            <p>Q4: Three coins are tossed. What is the probability of getting exactly two heads?</p>
+            <input type="text" class="answerInput" data-answer="3/8">
+            <div class="result"></div>
+        </div>
+
+        <div class="question">
+            <!-- Q5: If 3x - y = 7 and 2x + 2y - 10, find x and y (x=?, y=?) -->
+            <p>Q5: If 3x - y = 7 and 2x + 2y - 10, find x and y (x=?, y=?)</p>
+            <input type="text" class="answerInput" data-answer="x=2, y=1">
+            <div class="result"></div>
+        </div>
+
+        <div class="question">
+            <!-- Q6: Calculate 3! - 2 -->
+            <p>Q6: Calculate 3! - 2</p>
+            <input type="text" class="answerInput" data-answer="4">
+            <div class="result"></div>
+        </div>
+
+        <!-- Submit button for the user's answers -->
+        <button id="submitAll" class="center-button">Submit Answers</button>
     </div>
+</body>
+</html>
+<!-- JavaScript for handling answer submission -->
+<script>
+    const submitAllButton = document.getElementById("submitAll");
     
-    <script>
-        const submitAllButton = document.getElementById("submitAll");
-        
-        submitAllButton.addEventListener("click", () => {
-            const questionDivs = document.querySelectorAll(".question");
-            questionDivs.forEach(questionDiv => {
-                const answerInput = questionDiv.querySelector(".answerInput");
-                const resultDiv = questionDiv.querySelector(".result");
-                const userAnswer = answerInput.value.trim().toLowerCase();
-                const correctAnswer = answerInput.getAttribute("data-answer").toLowerCase();
-        
-                if (userAnswer === correctAnswer) {
-                    resultDiv.textContent = "Correct!";
-                    resultDiv.classList.add("correct"); // Add 'correct' class
-                } else {
-                    resultDiv.textContent = `Wrong. The correct answer is ${correctAnswer}.`;
-                    resultDiv.classList.remove("correct"); // Remove 'correct' class
-                }
-            });
+    submitAllButton.addEventListener("click", () => {
+        const questionDivs = document.querySelectorAll(".question");
+        questionDivs.forEach(questionDiv => {
+            const answerInput = questionDiv.querySelector(".answerInput");
+            const resultDiv = questionDiv.querySelector(".result");
+            const userAnswer = answerInput.value.trim().toLowerCase();
+            const correctAnswer = answerInput.getAttribute("data-answer").toLowerCase();
+    
+            if (userAnswer === correctAnswer) {
+                resultDiv.textContent = "Correct!";
+                resultDiv.classList.add("correct"); // Add 'correct' class
+            } else {
+                resultDiv.textContent = `Wrong. The correct answer is ${correctAnswer}.`;
+                resultDiv.classList.remove("correct"); // Remove 'correct' class
+            }
         });
-    </script>
-    
+    });
+</script>
 
-    <!-- Code for this button -->
-    <button onclick="topFunction()" id="myBtn" title="Go to top"> &#8593; </button>
-  
-    <script>
-    //Get the button
-    var mybutton = document.getElementById("myBtn");
-    
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
-    
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    }
-    
-    
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-    </script>
+<!-- Code for this button -->
+<button onclick="topFunction()" id="myBtn" title="Go to top"> &#8593; </button>
 
-    <!-- Line code-->
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+<!-- Line code -->
 <hr class="line1">
 <br>
 
+<!-- Back button -->
 <div align="center" style="margin-bottom: 20px;">
     <a href="/years_maths">
     <button type="button" class="btn btn-primary btn-lg">Back</button></a>
-  </div>
+</div>
 
+<!-- Footer -->
 <footer class="py-5 bg-green">
     <div class="footer"><p class="m-0 text-center text-white">Copyright &copy; Academify 2023</p></div>
 </footer>
+<!-- End of the main content block -->
 {% endblock %}

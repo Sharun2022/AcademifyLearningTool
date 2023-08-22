@@ -1,5 +1,10 @@
-{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
-%}
+<!-- Extends another file named "base.html" -->
+{% extends "base.html" %}
+
+<!-- Defined a block named "title" and set the title of the page to Login -->
+{% block title %}Login{% endblock %}
+
+{% block content %}
 <form method="POST">
   <h3 align="center">Login</h3>
   <div class="form-group">
@@ -11,6 +16,8 @@
       class="form-control"
       placeholder="Enter Email"
     />
+    <!-- Input field for entering the user's email -->
+
     <label for="password">Password</label>
     <input
       type="password"
@@ -19,9 +26,13 @@
       class="form-control"
       placeholder="Enter Password"
     />
+    <!-- Input field for entering the user's password -->
+
     <br />
     <div align="center">
+      <!-- Align the button in the center -->
       <button class="btn btn-primary" type="submit">Login</button>
+      <!-- Submit button to initiate the login process -->
     </div>
   </div>
 </form>

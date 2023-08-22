@@ -1,122 +1,129 @@
+<!-- Extends another file named "base.html" -->
 {% extends "base.html" %}
-{% block title %} NCEA Level 3 Mathematics {% endblock %}
-{% block content %}
+<!-- Defined a block named "title" and set the title of the page to NCEA Level 3 Mathematics -->
+{% block title %} NCEA Level 3 Mathematics {% endblock %}{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page Title -->
     <title>Question and Answer Game</title>
 </head>
 <body>
+    <!-- Heading Title is NCEA Level 3 Mathematics Revision -->
     <h1> NCEA Level 3 Mathematics Revision </h1>
     
-        <div id="questions">
-            <div class="question">
-                <p>Q1: Given the dataset: 10,12,14,16,18, calculate the standard deviation</p>
-                <input type="text" class="answerInput" data-answer="2.83">
-                <div class="result"></div>
-            </div>
-            
-            <div class="question">
-                <p>Q2: What is the value of cos(π/6)</p>
-                <input type="text" class="answerInput" data-answer="√3/2">
-                <div class="result"></div>
-            </div>
-            
-            <div class="question">
-                <p>Q3: If x + y + z = 6,
-                    2x - y + z = 1,
-                    x + 2y = 8,
-                    Find x, y, z
-                </p>
-                <input type="text" class="answerInput" data-answer="x=3, y=2, z=1">
-                <div class="result"></div>
-            </div>
-
-            <div class="question">
-                <p>Q4: Evaluate the integral (3x^2 + 2x) dx</p>
-                <input type="text" class="answerInput" data-answer="x^3 + x^2 + C">
-                <div class="result"></div>
-            </div>
-
-            <div class="question">
-                <p>Q5: Find the equation to the tangent
-                    to the curve y = (e^(3x)) + 2, where x = 1 
-                </p>
-                <input type="text" class="answerInput" data-answer="y=3e+2">
-                <div class="result"></div>
-            </div>
-
-            <div class="question">
-                <p>Q6: Given the data set: 6, 8, 10, 12, 14, find the range</p>
-                <input type="text" class="answerInput" data-answer="8">
-                <div class="result"></div>
-            </div>
-
-            <button id="submitAll" class="center-button">Submit Answers</button>
+    <!-- All the questions from 1 to 6 with answers -->
+    <div id="questions">
+        <div class="question">
+            <!-- Q1: Given the dataset: 10,12,14,16,18, calculate the standard deviation -->
+            <p>Q1: Given the dataset: 10,12,14,16,18, calculate the standard deviation</p>
+            <input type="text" class="answerInput" data-answer="2.83">
+            <div class="result"></div>
         </div>
+        
+        <div class="question">
+            <!-- Q2: What is the value of cos(π/6) -->
+            <p>Q2: What is the value of cos(π/6)</p>
+            <input type="text" class="answerInput" data-answer="√3/2">
+            <div class="result"></div>
+        </div>
+        
+        <div class="question">
+            <!-- Q3: If x + y + z = 6, 2x - y + z = 1, x + 2y = 8, Find x, y, z -->
+            <p>Q3: If x + y + z = 6, 2x - y + z = 1, x + 2y = 8, Find x, y, z</p>
+            <input type="text" class="answerInput" data-answer="x=3, y=2, z=1">
+            <div class="result"></div>
+        </div>
+
+        <div class="question">
+            <!-- Q4: Evaluate the integral (3x^2 + 2x) dx -->
+            <p>Q4: Evaluate the integral (3x^2 + 2x) dx</p>
+            <input type="text" class="answerInput" data-answer="x^3 + x^2 + C">
+            <div class="result"></div>
+        </div>
+
+        <div class="question">
+            <!-- Q5: Find the equation to the tangent to the curve y = (e^(3x)) + 2, where x = 1 -->
+            <p>Q5: Find the equation to the tangent to the curve y = (e^(3x)) + 2, where x = 1</p>
+            <input type="text" class="answerInput" data-answer="y=3e+2">
+            <div class="result"></div>
+        </div>
+
+        <div class="question">
+            <!-- Q6: Given the data set: 6, 8, 10, 12, 14, find the range -->
+            <p>Q6: Given the data set: 6, 8, 10, 12, 14, find the range</p>
+            <input type="text" class="answerInput" data-answer="8">
+            <div class="result"></div>
+        </div>
+
+        <!-- Submit button for the user's answers -->
+        <button id="submitAll" class="center-button">Submit Answers</button>
     </div>
+</body>
+</html>
+<!-- JavaScript for handling answer submission -->
+<script>
+    const submitAllButton = document.getElementById("submitAll");
     
-    <script>
-        const submitAllButton = document.getElementById("submitAll");
-        
-        submitAllButton.addEventListener("click", () => {
-            const questionDivs = document.querySelectorAll(".question");
-            questionDivs.forEach(questionDiv => {
-                const answerInput = questionDiv.querySelector(".answerInput");
-                const resultDiv = questionDiv.querySelector(".result");
-                const userAnswer = answerInput.value.trim().toLowerCase();
-                const correctAnswer = answerInput.getAttribute("data-answer").toLowerCase();
-        
-                if (userAnswer === correctAnswer) {
-                    resultDiv.textContent = "Correct!";
-                    resultDiv.classList.add("correct"); // Add 'correct' class
-                } else {
-                    resultDiv.textContent = `Wrong. The correct answer is ${correctAnswer}.`;
-                    resultDiv.classList.remove("correct"); // Remove 'correct' class
-                }
-            });
+    submitAllButton.addEventListener("click", () => {
+        const questionDivs = document.querySelectorAll(".question");
+        questionDivs.forEach(questionDiv => {
+            const answerInput = questionDiv.querySelector(".answerInput");
+            const resultDiv = questionDiv.querySelector(".result");
+            const userAnswer = answerInput.value.trim().toLowerCase();
+            const correctAnswer = answerInput.getAttribute("data-answer").toLowerCase();
+    
+            if (userAnswer === correctAnswer) {
+                resultDiv.textContent = "Correct!";
+                resultDiv.classList.add("correct"); // Add 'correct' class
+            } else {
+                resultDiv.textContent = `Wrong. The correct answer is ${correctAnswer}.`;
+                resultDiv.classList.remove("correct"); // Remove 'correct' class
+            }
         });
-    </script>
-    
+    });
+</script>
 
-    <!-- Code for this button -->
-    <button onclick="topFunction()" id="myBtn" title="Go to top"> &#8593; </button>
-  
-    <script>
-    //Get the button
-    var mybutton = document.getElementById("myBtn");
-    
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
-    
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    }
-    
-    
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-    </script>
+<!-- Code for this button -->
+<button onclick="topFunction()" id="myBtn" title="Go to top"> &#8593; </button>
 
-    <!-- Line code-->
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+<!-- Line code -->
 <hr class="line1">
 <br>
 
+<!-- Back button -->
 <div align="center" style="margin-bottom: 20px;">
     <a href="/years_maths">
     <button type="button" class="btn btn-primary btn-lg">Back</button></a>
-  </div>
+</div>
 
+<!-- Footer -->
 <footer class="py-5 bg-green">
     <div class="footer"><p class="m-0 text-center text-white">Copyright &copy; Academify 2023</p></div>
 </footer>
+<!-- End of the main content block -->
 {% endblock %}

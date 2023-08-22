@@ -1,8 +1,18 @@
-{% extends "posts_div.html" %} {% block title %}{{username}}'s Posts{% endblock
-%} {% block header %} {{username}}'s posts {% endblock %} {% block footer %}
+<!-- Extends another file named "posts_div.html" -->
+{% extends "posts_div.html" %}
+
+<!-- Defined a block named "title" and set the title of the page to the username followed by "'s Posts" -->
+{% block title %}{{ username }}'s Posts{% endblock %}
+
+<!-- Defined a block named "header" and set the header content to the username followed by "'s posts" -->
+{% block header %} {{ username }}'s posts {% endblock %}
+
+<!-- Defined a block named "footer" -->
+{% block footer %}
 <div align="center">
-  <a href="/home"
-    ><button type="button" class="btn btn-primary btn-lg">Back</button></a
-  >
+    <!-- Back button to return to the home page -->
+    <a href="/home">
+        <button type="button" class="btn btn-primary btn-lg">Back</button>
+    </a>
 </div>
 {% endblock %}
