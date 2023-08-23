@@ -15,7 +15,7 @@ def not_blank(comment):
     valid = False # Defines valid as being a false input
     while not valid: # When not valid loop
         text = comment.strip() # Remove leading and trailing whitespace
-        if text !="": # Test if text to whitespace
+        if text !="": #  Test if text to whitespace
             return text # Return text
         else: # If valid input
             break # Break loop
@@ -33,12 +33,13 @@ def blog():
     posts = Post.query.order_by(Post.date_created.desc()).paginate(page=page, per_page=4)
     return render_template("blog.html", user=current_user, posts=posts)
 
-
+# Defines a route for the subjects page
 @views.route("/subjects")
 @login_required
 def subjects():
     return render_template("subjects.html", user=current_user)
 
+# Defines routes for various years in different subjects
 @views.route("/years_maths")
 @login_required
 def years_maths():
@@ -70,6 +71,8 @@ def years_phy():
     return render_template("years_phy.html", user=current_user)
 
 
+#  Defines a route for all revision pages from Year 8 to 13 
+#  Defines a route for all subject pages from DTG, PHY, CHEM, MAT, RE and ENG
 @views.route("/year8_maths")
 @login_required
 def year8_maths():
@@ -252,88 +255,87 @@ def year13_phy():
     return render_template("year13_phy.html", user=current_user)
 
 
-
+# Route to create a new post
 @views.route("/create-post", methods=['GET', 'POST'])
 @login_required
 def create_post():
-    form = PostForm()
-    if form.validate_on_submit():
-        title = form.title.data
-        text = form.text.data
-        post = Post(title=title, text=text, author=current_user.id)
-        db.session.add(post)
-        db.session.commit()
-        flash('Post created!', category='success')
-        return redirect(url_for('views.blog'))
+    form = PostForm()  # Create a form instance
+    if form.validate_on_submit():  # If the form is submitted and valid
+        title = form.title.data  # Get title data from the form
+        text = form.text.data  # Get text data from the form
+        post = Post(title=title, text=text, author=current_user.id)  # Create a new post object
+        db.session.add(post)  # Add the post to the database session
+        db.session.commit()  # Commit changes to the database
+        flash('Post created!', category='success')  # Flash a success message
+        return redirect(url_for('views.blog'))  # Redirect to the 'blog' route
+    return render_template('create_post.html', form=form, user=current_user)  # Render the template with the form and user
 
-    return render_template('create_post.html', form=form, user=current_user)
-
-
+# Route to delete a post
 @views.route("/delete-post/<id>")
 @login_required
 def delete_post(id):
-    post = Post.query.filter_by(id=id).first()
-
+    post = Post.query.filter_by(id=id).first()  # Get the post with the provided ID
     if not post:
-        flash("Post does not exist.", category='error')
+        flash("Post does not exist.", category='error')  # Flash an error message if the post doesn't exist
     elif current_user.id != post.id:
-        flash('You do not have permission to delete this post.', category='error')
+        flash('You do not have permission to delete this post.', category='error')  # Flash an error message if the user doesn't have permission
     else:
-        db.session.delete(post)
-        db.session.commit()
-        flash('Post deleted.', category='success')
+        db.session.delete(post)  # Delete the post from the database session
+        db.session.commit()  # Commit changes to the database
+        flash('Post deleted.', category='success')  # Flash a success message
+    return redirect(url_for('views.blog'))  # Redirect to the 'blog' route
 
-    return redirect(url_for('views.blog'))
-
-
+# Route to display posts by a specific user
 @views.route("/posts/<username>")
 @login_required
 def posts(username):
-    page = request.args.get('page', 1, type=int)
-    user = User.query.filter_by(username=username).first()
-
+    page = request.args.get('page', 1, type=int)  # Get the page number from the request arguments
+    user = User.query.filter_by(username=username).first()  # Get the user with the provided username
     if not user:
-        flash('No user with that username exists.', category='error')
-        return redirect(url_for('views.blog'))
-
+        flash('No user with that username exists.', category='error')  # Flash an error message if the user doesn't exist
+        return redirect(url_for('views.blog'))  # Redirect to the 'blog' route
     posts = Post.query.filter_by(user=user)\
         .order_by(Post.date_created.desc())\
-            .paginate(page=page, per_page=5)
-    return render_template("posts.html", user=current_user, posts=posts, username=username)
+            .paginate(page=page, per_page=5)  # Query posts by the user, order by date, and paginate the results
+    return render_template("posts.html", user=current_user, posts=posts, username=username)  # Render the template with user, posts, and username
 
-# Defines a route for creating a comment in a post 
+
+# Defines a route for creating a comment in a post
 # Uses HTTP methods (POSTS) for user to submit a comment in this case
 @views.route("/create-comment/<post_id>", methods=['POST'])
 # Sets the route for the creation of a comment under the posts ID
-@login_required # Requires the user to be logged in
+@login_required  # Requires the user to be logged in
 def create_comment(post_id):
-    comment = request.form.get('text') # Defines comment
+    comment = request.form.get('text')  # Defines comment
     # as the request to get the text the user has entered
-    text = not_blank(comment) # Define text as using the 
+    text = not_blank(comment)  # Define text as using the
     # as not blank in terms of the comment that the user is trying to post
 
     if not text:
         flash('Comment cannot be empty.', category='error')
     else:
-        post = Post.query.filter_by(id=post_id)
+        post = Post.query.filter_by(id=post_id).first()  # Get the post with the provided ID
         if post:
             comment = Comment(
-                text=text, author=current_user.id, post_id=post_id)
-            db.session.add(comment)
-            db.session.commit()
+                text=text, author=current_user.id, post_id=post_id)  # Create a new Comment object
+            db.session.add(comment)  # Add the comment to the database session
+            db.session.commit()  # Commit changes to the database
         else:
-            flash('Post does not exist.', category='error')
+            flash('Post does not exist.', category='error')  # Flash an error message if the post doesn't exist
 
-    return redirect(url_for('views.blog'))
+    return redirect(url_for('views.blog'))  # Redirect to the 'blog' route
 
 
+# Defines a route for deleting a comment
 @views.route("/delete-comment/<comment_id>")
 @login_required
 def delete_comment(comment_id):
     comment = Comment.query.filter_by(id=comment_id).first()
 
+    # Check if the comment exists
     if not comment:
         flash('Comment does not exist.', category='error')
+    # Check if the current user is the author of the comment or the post author
     elif current_user.id != comment.author and current_user.id != comment.post.author:
         flash('You do not have permission to delete this comment.', category='error')
     else:
@@ -342,16 +344,17 @@ def delete_comment(comment_id):
 
     return redirect(url_for('views.blog'))
 
-
+# Defines a route for liking a post
 @views.route("/like-post/<post_id>", methods=['POST'])
 @login_required
 def like(post_id):
     post = Post.query.filter_by(id=post_id).first()
-    like = Like.query.filter_by(
-        author=current_user.id, post_id=post_id).first()
+    like = Like.query.filter_by(author=current_user.id, post_id=post_id).first()
 
+    # Check if the post exists
     if not post:
         return jsonify({'error': 'Post does not exist.'}, 400)
+    # Toggle like status
     elif like:
         db.session.delete(like)
         db.session.commit()
@@ -360,13 +363,14 @@ def like(post_id):
         db.session.add(like)
         db.session.commit()
 
+    # Return JSON response with likes count and user's like status
     return jsonify({"likes": len(post.likes), "liked": current_user.id in map(lambda x: x.author, post.likes)})
 
-
-def save_picture(forms_picture):
+# Defines a function to save a user's profile picture
+def save_picture(form_picture):
     path = Path("website/static/profile_pics")
-    random_hex = secrets.token_hex(8) 
-    _,f_ext = os.path.splitext(form_picture.filename)
+    random_hex = secrets.token_hex(8)
+    _, f_ext = os.path.splitext(form_picture.filename)
     picture_fn = random_hex + f_ext
     picture_path = os.path.join(path, picture_fn)
     output_size = (125, 125)
@@ -376,6 +380,7 @@ def save_picture(forms_picture):
 
     return picture_fn
 
+# Defines a route for the user's account page
 @views.route("/account", methods=['GET', 'POST'])
 @login_required
 def account():
@@ -395,11 +400,12 @@ def account():
     image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
     return render_template('account.html', user=current_user, image_file=image_file, form=form)
 
-
+# Defines a route for updating a post
 @views.route("/update-post/<id>", methods=['GET', 'POST'])
 @login_required
 def update_post(id):
     post = Post.query.filter_by(id=id).first()
+    # Check if the current user is the author of the post
     if post.author != current_user.id:
         abort(403)
     form = PostForm()

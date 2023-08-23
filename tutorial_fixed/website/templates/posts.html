@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <!-- Extends another file named "posts_div.html" -->
 {% extends "posts_div.html" %}
 
@@ -9,10 +11,8 @@
 
 <!-- Defined a block named "footer" -->
 {% block footer %}
-<div align="center">
+<div style="text-align: center;">
     <!-- Back button to return to the home page -->
-    <a href="/home">
-        <button type="button" class="btn btn-primary btn-lg">Back</button>
-    </a>
+    <a href="/home" class="btn btn-primary btn-lg">Back</a>
 </div>
 {% endblock %}

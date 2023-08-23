@@ -6,8 +6,9 @@ h1{
 
 }
 
+/* Meet the members */
 .meet{
-    border: 4px solid black;
+    border: 4px solid black; /* Solid 4px black border around the meet the members */
     
 }
 /* The inside of carousel*/
@@ -42,16 +43,17 @@ h1{
 
 }
 
+/* Footer background colour*/
 .bg-green {
-    background-color: green;
+    background-color: green; /* Background colour set as green */
   }
 
   
   
 
-
+/* Center button */
 .center-button {
-    display: block;
+    display: block; 
     margin: 0 auto;
 }
 
@@ -60,7 +62,7 @@ h1{
 /* Navigation bar */
 .navbar{    
     font-weight: bold; /* Navigation bar text sets to bold*/
-    border-radius: px; /* The outer border edge and space between navbar is 10px */
+    border-radius: 4px; /* The outer border edge and space between navbar is 10px */
     
 }
 
@@ -84,32 +86,31 @@ h1{
 }
 
 
-.article-img{
+/* Styling for article images */
+.article-img {
     height: 65px;
     width: 65px;
     margin: 16px;   
 }
 
-.post-title{
+/* Styling for post titles */
+.post-title {
     font-weight: 500;
     line-height: 1.2;
 }
 
-
-
-
-.card-footer{
-    background-color:#98fb98 ;  
- 
+/* Styling for card footers */
+.card-footer {
+    background-color: #98fb98;  
 }
 
-.p{
+/* Styling for paragraph elements */
+.p {
     background-color: purple;
-    
 }
 
-
-.box{
+/* Styling for a box element */
+.box {
     width: 320px;
     padding: 10px;
     border: 5px solid #003300;
@@ -117,41 +118,46 @@ h1{
     text-align: center;
 }
 
-
-.page{
+/* Styling for page background */
+.page {
     background-color: rgb(197, 228, 197);
 }
 
+/* Styling for body background */
 body {
     background-color: rgb(197, 228, 197) !important;
 }
-.card{
+
+/* Styling for card elements */
+.card {
     background-color: rgb(201, 253, 201);
     border-radius: 10px;
     border: 2px solid black;
     box-shadow: 0 2px 4px #5a11111a;
 }
 
-
-.profile-area{
+/* Styling for profile area */
+.profile-area {
     padding: 80px 0;
 }
 
-.ccard{
+/* Styling for custom card */
+.ccard {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     border-radius: 15px;
 }
 
-.img1 img{
+/* Styling for image in custom card */
+.img1 img {
     height: 200px;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     width: 100%;
-
 }
 
-.img2 img{
+/* Styling for second image in custom card */
+.img2 img {
     position: relative;
     display: block;
     margin-left: auto;
@@ -164,45 +170,50 @@ body {
     margin-top: -80px;
 }
 
-.ccard:hover .img2 img{
+/* Styling for second image in custom card on hover */
+.ccard:hover .img2 img {
     border-color: rgb(76, 240, 76);
-    transition: .7s;
+    transition: 0.7s;
 }
 
-.main-text{
+/* Styling for main text section */
+.main-text {
     padding: 30px 0;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
 }
 
-.main-text h2{
+/* Styling for main text heading */
+.main-text h2 {
     text-transform: uppercase;
-    font-weight:900;
+    font-weight: 900;
     font-size: 20px;
-    margin:0 0 20px;
+    margin: 0 0 20px;
 }
 
-.main-text p{
+/* Styling for main text paragraph */
+.main-text p {
     font-size: 16px;
     padding: 0 35px;
 }
 
-.socials{
-    text-align:center;
+/* Styling for social icons section */
+.socials {
+    text-align: center;
     padding-bottom: 20px;
 }
 
+/* Styling for social icons */
 .socials i {
     font-size: 20px;
     color: darkcyan;
     padding: 0 10px;
 }
 
-
+/* Styling for info list */
 .info-list {
     list-style: disc; /* Display bullet points */
     padding: 0;
@@ -210,11 +221,12 @@ body {
     margin-top: 10px; /* Adjust spacing */
 }
 
+/* Styling for info list items */
 .info-list li {
     margin-bottom: 10px;
 }
 
-
+/* Styling for question container */
 .question {
     border: 1px solid #ccc;
     padding: 10px;
@@ -225,16 +237,14 @@ body {
     overflow: hidden;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-
-
 }
 
-
-
+/* Styling for question paragraph */
 .question p {
     font-weight: bold;
 }
 
+/* Styling for answer input */
 .answerInput {
     width: 80px;
     padding: 5px;
@@ -242,16 +252,19 @@ body {
     margin-top: 5px;
 }
 
+/* Styling for result messages */
 .result {
     margin-top: 10px;
     font-weight: bold; /* Bold text */
     color: #d9534f; /* Incorrect answer color */
 }
 
+/* Styling for correct result messages */
 .result.correct {
     color: #5cb85c; /* Correct answer color */
 }
 
+/* Styling for submit button */
 #submitAll {
     margin-top: 20px;
     padding: 10px 20px;
@@ -263,16 +276,18 @@ body {
     transition: background-color 0.3s, transform 0.2s;
 }
 
+/* Styling for submit button on hover */
 #submitAll:hover {
     background-color: #45a049;
     transform: scale(1.05);
 }
 
+/* Styling for question container on hover */
 .question:hover {
     background-color: rgb(132, 248, 132);
 }
 
-
+/* Styling for questions container */
 #questions {
     display: flex;
     flex-direction: column;

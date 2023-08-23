@@ -1,10 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
 <!-- Extends another file named "base.html" -->
 {% extends "base.html" %} 
 <!-- Defined a block named "title" and set the title of the page to Sign Up -->
 {% block title %}Sign Up{% endblock %}
 {% block content %}
 <div class="content-section">
-    <form method="POST" action="">
+    <form method="POST">
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Join Today</legend>
@@ -66,7 +68,7 @@
                 {% endif %}
             </div>
         </fieldset>
-    </br>
+    <br>
         <!-- Submit button -->
         <div class="form-group">
             {{ form.submit(class="btn btn-outline-info") }}

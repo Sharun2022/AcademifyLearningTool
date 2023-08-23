@@ -1,15 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
 <!-- Extends another file named "base.html" -->
 {% extends "base.html" %}
 <!-- Defined a block named "title" and set the title of the page to Year 8 Chemistry -->
 {% block title %} Year 8 Chemistry {% endblock %}{% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Page Title -->
-    <title>Question and Answer Game</title>
-</head>
 <body>
     <!-- Heading Title is Year 8 Chemistry Revision-->
     <h1> Year 8 Chemistry Revision </h1>
@@ -61,8 +55,6 @@
         <!-- Submit button for the user's answers -->
         <button id="submitAll" class="center-button">Submit Answers</button>
     </div>
-</body>
-</html>
 <!-- JavaScript for handling answer submission -->
 <script>
     const submitAllButton = document.getElementById("submitAll");
@@ -116,14 +108,17 @@ function topFunction() {
 <br>
 
 <!-- Back button -->
-<div align="center" style="margin-bottom: 20px;">
-    <a href="/years_chem">
-    <button type="button" class="btn btn-primary btn-lg">Back</button></a>
+<div style="text-align: center; margin-bottom: 20px;">
+    <a href="/years_chem" class="btn btn-primary btn-lg">Back</a>
 </div>
+
+
 
 <!-- Footer -->
 <footer class="py-5 bg-green">
     <div class="footer"><p class="m-0 text-center text-white">Copyright &copy; Academify 2023</p></div>
 </footer>
 <!-- End of the main content block -->
+</body>
+</html>
 {% endblock %}

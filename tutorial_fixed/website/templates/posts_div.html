@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <!-- Extends another file named "base.html" -->
 {% extends "base.html" %} 
 
@@ -5,14 +7,14 @@
 {% block title %}Home{% endblock %} 
 
 {% block content %}
-<h1 align="center">
+<h1 class="text-center">
   <!-- Defined a block named "header" and set the header content to "Posts" -->
   {% block header %}Posts{% endblock %}
 </h1>
 <div id="posts">
   {% for post in posts %}
   <div class="card border-dark">
-    <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/'+ post.user.image_file) }}"> 
+    <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/'+ post.user.image_file) }}" alt="Profile Picture">
     <div class="card-header d-flex justify-content-between align-items-center">
       <a href="/posts/{{post.user.username}}">{{post.user.username}}</a>
       <div>
@@ -40,9 +42,9 @@
     <div class="card-body">
       <!-- Display post title and text -->
       <div class="card-text post-title">{{post.title}}</div>
-      <br />
+      <br>
       <div class="card-text">{{post.text}}</div>
-      <br />
+      <br>
       <div class="collapse" id="comments-{{post.id}}">
         <div class="card">
           <div class="card-body" id="comments-expanded-{{post.id}}">
@@ -80,14 +82,14 @@
         {% endif %}
       </p>
       <!-- Form to create a new comment -->
-      <form class="input-group mb-3" method="POST" action="/create-comment/{{post.id}}">
-        <input type="text" id="text" name="text" class="form-control" placeholder="Comment something!" />
+      <form class="input-group mb-3" method="POST" action="{{ url_for('views.create_comment', post_id=post.id) }}">
+        <input type="text" id="text" name="text" class="form-control" placeholder="Comment something!">
         <button type="submit" class="btn btn-primary">Comment</button>
       </form>
     </div>
     <div class="card-footer text-muted">{{post.date_created}}</div>
   </div>
-  <br />
+  <br>
   {% endfor %}
 </div>
 
@@ -106,9 +108,10 @@
 
 <!-- Defined a block named "footer" and added a button to create a new post -->
 {% block footer %}
-<div align="center">
-  <a href="/create-post"><button type="button" class="btn btn-primary btn-lg">Create a Post</button></a>
+<div class="text-center">
+  <a href="/create-post" class="btn btn-primary btn-lg">Create a Post</a>
 </div>
 {% endblock %} 
 
 {% endblock %}
+</html>

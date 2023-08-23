@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <!-- Extends another file named "base.html" -->
 {% extends "base.html" %}
 <!-- Defined a block named "title" and set the title of the page to Update Post -->
@@ -5,7 +7,7 @@
 {% block content %}
     <!-- Content section with a form to update a post -->
     <div class="content-section">
-        <form method="POST" action="">
+        <form method="POST">
             <!-- Hidden tag for the form -->
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
@@ -50,7 +52,7 @@
                 </div>
             </fieldset>
             <!-- Line break -->
-            </br>
+            <br>
             <div class="form-group">
                 <!-- Submit button for the form -->
                 {{ form.submit(class="btn btn-outline-info") }}

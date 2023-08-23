@@ -1,10 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
 <!-- Extends another file named "base.html" -->
 {% extends "base.html" %} 
 <!-- Defined a block named "title" and set the title of the page to Home -->
 {% block title %}Home{% endblock %} {% block content%}
 
 <div class="content-section">
-  <form method="POST" action="">
+  <form method="POST">
       {{ form.hidden_tag() }}
       <fieldset class="form-group">
         <!-- Title for the form. -->
@@ -41,7 +43,7 @@
               {% endif %}
           </div>
       </fieldset>
-      </br>
+      <br>
       <div class="form-group">
         <!-- Submit buttom for the create post -->
           {{ form.submit(class="btn btn-outline-info") }}
@@ -50,3 +52,4 @@
 </div>
 <!-- Closes the main content block -->
 {% endblock %}
+</html>
