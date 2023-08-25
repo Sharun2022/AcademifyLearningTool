@@ -9,6 +9,7 @@ from flask_login import LoginManager
 db = SQLAlchemy()
 DB_NAME = "database.db"
 
+
 def create_app():
     """Create and configure a Flask app instance."""
     # Initialize the Flask app
@@ -43,6 +44,7 @@ def create_app():
         return User.query.get(int(id))
 
     return app
+
 
 def create_database(app):
     """Create the database if it doesn't exist."""

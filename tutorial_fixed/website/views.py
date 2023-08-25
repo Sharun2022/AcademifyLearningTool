@@ -277,7 +277,7 @@ def delete_post(id):
     post = Post.query.filter_by(id=id).first()  # Get the post with the provided ID
     if not post:
         flash("Post does not exist.", category='error')  # Flash an error message if the post doesn't exist
-    elif current_user.id != post.id:
+    elif post.author != current_user.id:
         flash('You do not have permission to delete this post.', category='error')  # Flash an error message if the user doesn't have permission
     else:
         db.session.delete(post)  # Delete the post from the database session
@@ -380,7 +380,6 @@ def save_picture(form_picture):
 
     return picture_fn
 
-# Defines a route for the user's account page
 @views.route("/account", methods=['GET', 'POST'])
 @login_required
 def account():
@@ -392,13 +391,14 @@ def account():
         current_user.username = form.username.data
         current_user.email = form.email.data
         db.session.commit()
-        flash('Your account has been updated')
+        flash('Your account has been updated!', 'success')
         return redirect(url_for('views.account'))
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.email.data = current_user.email
     image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
-    return render_template('account.html', user=current_user, image_file=image_file, form=form)
+    return render_template('account.html',user=current_user,
+                           image_file=image_file, form=form)
 
 # Defines a route for updating a post
 @views.route("/update-post/<id>", methods=['GET', 'POST'])
