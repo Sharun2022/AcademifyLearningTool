@@ -4,15 +4,15 @@
       <div class="media">
         <img class="rounded-circle article-img" src="{{ image_file }}" alt="User Profile Image">
         <div class="media-body">
-          <h2 class="account-heading">{{ current_user.username }}</h2>
-          <p class="text-secondary">{{ current_user.email }}</p>
+          <h2 class="account-heading" style="font-weight: 500;">{{ current_user.username }}</h2>
+          <p class="text-secondary" style="font-weight: 500;">{{ current_user.email }}</p>
         </div>
       </div>
         <form method="POST" action="" enctype="multipart/form-data">
             {{ form.hidden_tag() }}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Account Info</legend>
-                <div class="form-group">
+            <fieldset class="form-group" style="font-weight: 500;">
+                <legend class="border-bottom mb-4" style="font-weight: 900; text-transform: uppercase;">Account Information </legend>
+                <div class="form-group" style="font-weight: 500;">
                     {{ form.username.label(class="form-control-label") }}
 
                     {% if form.username.errors %}
@@ -26,7 +26,7 @@
                         {{ form.username(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="font-weight: 500;">
                     {{ form.email.label(class="form-control-label") }}
                     {% if form.email.errors %}
                         {{ form.email(class="form-control form-control-lg is-invalid") }}
@@ -40,7 +40,7 @@
                     {% endif %}
                 </div>
             </br>
-                <div class="form-group">
+                <div class="form-group" style="font-weight: 500;">
                     {{ form.picture.label() }}
                     {{ form.picture(class="form-control-file") }}
                     {% if form.picture.errors %}
@@ -55,6 +55,10 @@
                 {{ form.submit(class="btn btn-outline-info") }}
             </div>
         </form>
-    </br>
     </div>
+    <div style="text-align: center;">
+        <!-- Back button to return to the blog page -->
+        <a href="/blog" class="btn btn-primary btn-lg" style="font-weight: 500;">Back</a>
+      </div>
+    <br>
 {% endblock content %}

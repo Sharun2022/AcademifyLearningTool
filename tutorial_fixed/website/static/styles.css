@@ -2,10 +2,17 @@
 /* Heading 1 */
 h1{
     color: darkgreen;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 30px;
+    margin: 0 0 20px;
     text-align: center; /*Centers the text */
 
 }
 
+p{
+    font-weight: 500;
+}
 /* Meet the members */
 .meet{
     border: 4px solid black; /* Solid 4px black border around the meet the members */
@@ -160,6 +167,8 @@ body {
     border-radius: 15px;
 }
 
+
+
 /* Styling for image in custom card */
 .img1 img {
     height: 200px;
@@ -231,6 +240,7 @@ body {
     padding: 0;
     text-align: center;
     margin-top: 10px; /* Adjust spacing */
+    font-weight: 500;
 }
 
 /* Styling for info list items */

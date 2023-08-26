@@ -12,10 +12,10 @@
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
             <!-- Legend for the form -->
-            <legend class="border-bottom mb-4 d-flex justify-content-center">Update Post</legend>
+            <legend class="border-bottom mb-4 d-flex justify-content-center" style="font-weight: 900; text-transform: uppercase;">Update Post</legend>
             <div class="form-group">
                 <!-- Label for the post title -->
-                {{ form.title.label(class="form-control-label") }}
+                {{ form.title.label(class="form-control-label", style="font-weight: 500;") }}
                 <!-- Check for errors in the title field -->
                 {% if form.title.errors %}
                     <!-- Display the title field with error styling -->
@@ -34,7 +34,7 @@
 
             <div class="form-group">
                 <!-- Label for the post text -->
-                {{ form.text.label(class="form-control-label") }}
+                {{ form.text.label(class="form-control-label", style="font-weight: 500;") }}
                 <!-- Check for errors in the text field -->
                 {% if form.text.errors %}
                     <!-- Display the text field with error styling -->
@@ -55,7 +55,7 @@
         <br>
         <div class="form-group d-flex justify-content-center">
             <!-- Submit button for the form -->
-            {{ form.submit(class="btn btn-outline-info") }}
+            {{ form.submit(class="btn btn-outline-info", style="font-weight: 500;") }}
         </div>
         <br>
         <br>
@@ -63,7 +63,7 @@
 </div>
 <div style="text-align: center;">
     <!-- Back button to return to the blog page -->
-    <a href="/blog" class="btn btn-primary btn-lg">Back</a>
+    <a href="/blog" class="btn btn-primary btn-lg" style="font-weight: 500;">Back</a>
 </div>
 <br>
 {% endblock %}

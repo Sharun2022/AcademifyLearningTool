@@ -10,10 +10,10 @@
       {{ form.hidden_tag() }}
       <fieldset class="form-group">
         <!-- Title for the form. -->
-          <legend class="border-bottom mb-4">Create a Post</legend>
+          <legend class="border-bottom mb-4 d-flex justify-content-center" style="font-weight: 900; text-transform: uppercase;">Create a Post</legend>
           <div class="form-group">
             <!-- Label for the title field-->
-              {{ form.title.label(class="form-control-label") }}
+              {{ form.title.label(class="form-control-label", style="font-weight: 500;") }}
               {% if form.title.errors %}
                   {{ form.title(class="form-control form-control-lg is-invalid") }}
                   <!-- Invalid feedback for title errors -->
@@ -29,7 +29,7 @@
 
           <div class="form-group">
             <!-- Label for the text field-->
-              {{ form.text.label(class="form-control-label") }}
+              {{ form.text.label(class="form-control-label", style="font-weight: 500;") }}
               {% if form.text.errors %}
                   {{ form.text(class="form-control form-control-lg is-invalid") }}
                 <!-- Invalid feedback for title errors -->
@@ -46,7 +46,7 @@
       <br>
       <div class="form-group  d-flex justify-content-center">
         <!-- Submit buttom for the create post -->
-          {{ form.submit(class="btn btn-outline-info") }}
+          {{ form.submit(class="btn btn-outline-info", style="font-weight: 500;") }}
       </div>
       <br>
       <br>
@@ -54,13 +54,9 @@
 </div>
 <div style="text-align: center;">
   <!-- Back button to return to the blog page -->
-  <a href="/blog" class="btn btn-primary btn-lg">Back</a>
+  <a href="/blog" class="btn btn-primary btn-lg" style="font-weight: 500;">Back</a>
 </div>
 <!-- Closes the main content block -->
-<br>
-<br>
-<br>
-<br>
 <br>
 {% endblock %}
 </html>
