@@ -22,12 +22,12 @@
       type="text/css"
       href="{{ url_for('static',filename='styles.css') }}">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="icon" type="image/x-icon" href="static/images/favicon1.png">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon1.png') }}">
   </head>
   <body>
     <nav class="navbar navbar-expand-sm bg-success navbar-dark">
       <div class="container-fluid">
-          <img src="static/images/acad123.png" alt="Academify Logo" height="70">
+        <img src="{{ url_for('static', filename='images/acad123.png') }}" alt="Academify Logo" height="70">
         <button
           class="navbar-toggler"
           type="button"
@@ -101,5 +101,10 @@
         document.documentElement.scrollTop = 0;
       }
       </script>
+
+      <!-- Footer-->
+    <footer class="py-5 bg-green">
+      <div class="footer"><p class="m-0 text-center text-white">Copyright &copy; Academify 2023</p></div>
+  </footer>
   </body>
 </html>

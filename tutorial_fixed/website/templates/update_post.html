@@ -3,60 +3,68 @@
 <!-- Extends another file named "base.html" -->
 {% extends "base.html" %}
 <!-- Defined a block named "title" and set the title of the page to Update Post -->
-{% block title %}Update Post{% endblock %} 
-{% block content %}
-    <!-- Content section with a form to update a post -->
-    <div class="content-section">
-        <form method="POST">
-            <!-- Hidden tag for the form -->
-            {{ form.hidden_tag() }}
-            <fieldset class="form-group">
-                <!-- Legend for the form -->
-                <legend class="border-bottom mb-4">Update Post</legend>
-                <div class="form-group">
-                    <!-- Label for the post title -->
-                    {{ form.title.label(class="form-control-label") }}
-                    <!-- Check for errors in the title field -->
-                    {% if form.title.errors %}
-                        <!-- Display the title field with error styling -->
-                        {{ form.title(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            <!-- Display individual error messages for the title field -->
-                            {% for error in form.title.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        <!-- Display the title field without error styling -->
-                        {{ form.title(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-
-                <div class="form-group">
-                    <!-- Label for the post text -->
-                    {{ form.text.label(class="form-control-label") }}
-                    <!-- Check for errors in the text field -->
-                    {% if form.text.errors %}
-                        <!-- Display the text field with error styling -->
-                        {{ form.text(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            <!-- Display individual error messages for the text field -->
-                            {% for error in form.text.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        <!-- Display the text field without error styling -->
-                        {{ form.text(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-            </fieldset>
-            <!-- Line break -->
-            <br>
+{% block title %}Update Post{% endblock %} {% block content %}
+ 
+<!-- Content section with a form to update a post -->
+<div class="content-section">
+    <form method="POST">
+        <!-- Hidden tag for the form -->
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <!-- Legend for the form -->
+            <legend class="border-bottom mb-4 d-flex justify-content-center">Update Post</legend>
             <div class="form-group">
-                <!-- Submit button for the form -->
-                {{ form.submit(class="btn btn-outline-info") }}
+                <!-- Label for the post title -->
+                {{ form.title.label(class="form-control-label") }}
+                <!-- Check for errors in the title field -->
+                {% if form.title.errors %}
+                    <!-- Display the title field with error styling -->
+                    {{ form.title(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        <!-- Display individual error messages for the title field -->
+                        {% for error in form.title.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <!-- Display the title field without error styling -->
+                    {{ form.title(class="form-control form-control-lg") }}
+                {% endif %}
             </div>
-        </form>
-    </div>
+
+            <div class="form-group">
+                <!-- Label for the post text -->
+                {{ form.text.label(class="form-control-label") }}
+                <!-- Check for errors in the text field -->
+                {% if form.text.errors %}
+                    <!-- Display the text field with error styling -->
+                    {{ form.text(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        <!-- Display individual error messages for the text field -->
+                        {% for error in form.text.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <!-- Display the text field without error styling -->
+                    {{ form.text(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <!-- Line break -->
+        <br>
+        <div class="form-group d-flex justify-content-center">
+            <!-- Submit button for the form -->
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+        <br>
+        <br>
+    </form>
+</div>
+<div style="text-align: center;">
+    <!-- Back button to return to the blog page -->
+    <a href="/blog" class="btn btn-primary btn-lg">Back</a>
+</div>
+<br>
 {% endblock %}
+</html>

@@ -118,6 +118,17 @@ h1{
     text-align: center;
 }
 
+/* Styling for footer */
+footer {
+    width: 100%;
+    bottom: 0;
+    background-color: green;
+    height: 10rem;
+    color: white;
+    text-align: center;
+}
+  
+
 /* Styling for page background */
 .page {
     background-color: rgb(197, 228, 197);
