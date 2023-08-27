@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Extends another file named "base.html" -->
-{% extends "base.html" %} 
+<!-- Extends another HTML template named "base.html" -->
+{% extends "base.html" %}
 <!-- Defined a block named "title" and set the title of the page to Home -->
-{% block title %}Home{% endblock %} {% block content%}
-<!-- Page Content-->
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Page Content -->
 <body>
-    <div class = "page">
+    <!-- Outermost container -->
+    <div class="page">
         <div class="container">
-            <!-- Heading Row-->
+            <!-- Heading Row -->
             <div class="row gx-4 gx-lg-5 align-items-center my-5">
                 <div class="col-lg-7">
+                    <!-- Academify Logo -->
                     <img class="img-fluid rounded mb-4 mb-lg-0" src="static/images/acad123.png" alt="Academify Logo">
                 </div>
                 <div class="col-lg-5">
+                    <!-- Heading and Description -->
                     <h1 class="font-weight-light">Academify</h1>
                     <p style="padding: 10px; border: 2px solid rgb(26, 53, 31); text-align: justify;">
                         Academify is an online learning tool for teenagers to help them learn, grow, and succeed.
@@ -22,9 +27,10 @@
                 </div>
             </div>
             
-            <!-- Call to Action-->
+            <!-- Call to Action -->
             <div class="card text-black my-5 py-4 text-center" style="background-color: #98fb98;">
                 <div class="card-body">
+                    <!-- Call to Action text -->
                     <p class="text-black m-0" style="text-align: justify;">
                         At Academify, we help teenagers learn in a fun way. Our online tool makes studying interesting
                         and interactive. You can explore new things and discover knowledge that goes beyond regular classes.
@@ -32,26 +38,34 @@
                     </p>
                 </div>
             </div>
-            <!-- Content Row-->
+            
+            <!-- Content Row -->
             <div class="row gx-4 gx-lg-5">
+                <!-- Learn Section -->
                 <div class="col-md-4 mb-5">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h2 class="card-title">Learn</h2>
+                            <!-- Learn Section title -->
+                            <h2 class="card-title" style="font-weight: 500; text-transform: uppercase;">Learn</h2>
+                            <!-- Learn Section text -->
                             <p class="card-text" style="text-align: justify;">
                                 At Academify, we help teenagers learn in a fun way. Our online tool makes studying interesting
                                 and interactive. You can explore new things and discover knowledge that goes beyond regular classes.
                                 We want you to enjoy learning and keep doing it throughout your life.
                             </p>
                         </div>
+                        <!-- Button for more information -->
                         <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
                     </div>
                 </div>
                 
+                <!-- Grow Section -->
                 <div class="col-md-4 mb-5">
                     <div class="card h-100">
                         <div class="card-body">
+                            <!-- Grow Section title -->
                             <h2 class="card-title">Grow</h2>
+                            <!-- Grow Section text -->
                             <p class="card-text" style="text-align: justify;">
                                 Growing up isn't just about getting taller; it's about becoming better and trying new things.
                                 At Academify, we want you to grow in many ways. We offer more than just school stuff –
@@ -59,14 +73,18 @@
                                 Our mentors and activities will help you become confident and ready for the world.
                             </p>
                         </div>
+                        <!-- Button for more information -->
                         <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
                     </div>
                 </div>
                 
+                <!-- Succeed Section -->
                 <div class="col-md-4 mb-5">
                     <div class="card h-100">
                         <div class="card-body">
+                            <!-- Succeed Section title -->
                             <h2 class="card-title">Succeed</h2>
+                            <!-- Succeed Section text -->
                             <p class="card-text" style="text-align: justify;">
                                 Success doesn't mean winning just one time; it's about doing well in everything you try.
                                 Academify is here to help you succeed. We teach you to work hard, solve problems, and never give up.
@@ -74,121 +92,130 @@
                                 With Academify, each achievement you earn takes you closer to a successful and happy future.
                             </p>
                         </div>
+                        <!-- Button for more information -->
                         <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
                     </div>
                 </div>
             </div>
         
+            <!-- Meet the members -->
             <div class="meet">
                 <h1> Meet the members</h1>
             </div>
-            </div>
+            
+            <!-- Member Profiles -->
             <div class="profile-area">
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="ccard">
-                                <div class="img1"><img src="static/images/lg.jpg" alt=""></div>
-                                <div class="img2"><img src="static/images/sharun.jpg" alt=""></div>
-                                <div class="main-text" style="text-align: center;">
-                                    <h2> Sharun Anton Constantine </h2>
-                                    <ul class="info-list">
-                                        <li> CEO of Academify </li>
-                                        <li> Born: 31st October 2005</li>
-                                        <li> Hobbies: Basketball and Gaming </li>
-                                        <li> Leader & Quality Communication </li>
-                                    </ul>
-                                </div>
-                                <div class="socials">
-                                    <i class="fa fa-facebook"></i>
-                                    <i class="fa fa-linkedin"></i>
-                                    <i class="fa fa-dribble"></i>
-                                    <i class="fa fa-twitter"></i>
-                                </div>
+                <div class="row">
+                    <!-- Member 1 -->
+                    <div class="col-md-4">
+                        <div class="ccard">
+                            <!-- Member 1 Images -->
+                            <div class="img1"><img src="static/images/lg.jpg" alt=""></div>
+                            <div class="img2"><img src="static/images/sharun.jpg" alt=""></div>
+                            <div class="main-text" style="text-align: center;">
+                                <h2> Sharun Anton Constantine </h2>
+                                <!-- Member 1 Info -->
+                                <ul class="info-list">
+                                    <li> CEO of Academify </li>
+                                    <li> Born: 31st October 2005</li>
+                                    <li> Hobbies: Basketball and Gaming </li>
+                                    <li> Leader & Quality Communication </li>
+                                </ul>
+                            </div>
+                            <!-- Member 1 Social media icons -->
+                            <div class="socials">
+                                <i class="fa fa-facebook"></i>
+                                <i class="fa fa-linkedin"></i>
+                                <i class="fa fa-dribble"></i>
+                                <i class="fa fa-twitter"></i>
                             </div>
                         </div>
-                        
-                        
-                        <div class="col-md-4">
-                            <div class="ccard">
-                                <div class="img1"><img src="static/images/lg.jpg" alt=""></div>
-                                <div class="img2"><img src="static/images/daniel.jpg" alt=""></div>
-                                <div class="main-text" style="text-align: center;">
-                                    <h2> Daniel Pereira </h2>
-                                    <ul class="info-list">
-                                        <li> CFO of Academify </li>
-                                        <li> Born: 03rd August 2005</li>
-                                        <li> Hobbies: Coding and Mathematics </li>
-                                        <li> Hard worker & Creative </li>
-                                    </ul>
-                                </div>
-                                <div class="socials">
-                                    <i class="fa fa-facebook"></i>
-                                    <i class="fa fa-linkedin"></i>
-                                    <i class="fa fa-dribble"></i>
-                                    <i class="fa fa-twitter"></i>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <div class="ccard">
-                                <div class="img1"><img src="static/images/lg.jpg" alt=""></div>
-                                <div class="img2"><img src="static/images/george.jpg" alt=""></div>
-                                <div class="main-text" style="text-align: center;">
-                                    <h2> George El Hayek </h2>
-                                    <ul class="info-list">
-                                        <li> CMO of Academify </li>
-                                        <li> Born: 12th April 2005</li>
-                                        <li> Hobbies: Gym & Boxing </li>
-                                        <li> Financial Foresight & Fast Thinker </li>
-                                    </ul>
-                                </div>
-                                <div class="socials">
-                                    <i class="fa fa-facebook"></i>
-                                    <i class="fa fa-linkedin"></i>
-                                    <i class="fa fa-dribble"></i>
-                                    <i class="fa fa-twitter"></i>
-                                </div>
-                            </div>
-                        </div> 
                     </div>
+                    
+                    <!-- Member 2 -->
+                    <div class="col-md-4">
+                        <div class="ccard">
+                            <!-- Member 2 Images -->
+                            <div class="img1"><img src="static/images/lg.jpg" alt=""></div>
+                            <div class="img2"><img src="static/images/daniel.jpg" alt=""></div>
+                            <div class="main-text" style="text-align: center;">
+                                <h2> Daniel Pereira </h2>
+                                <!-- Member 2 Info -->
+                                <ul class="info-list">
+                                    <li> CFO of Academify </li>
+                                    <li> Born: 03rd August 2005</li>
+                                    <li> Hobbies: Coding and Mathematics </li>
+                                    <li> Hard worker & Creative </li>
+                                </ul>
+                            </div>
+                            <!-- Member 2 Social media icons -->
+                            <div class="socials">
+                                <i class="fa fa-facebook"></i>
+                                <i class="fa fa-linkedin"></i>
+                                <i class="fa fa-dribble"></i>
+                                <i class="fa fa-twitter"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Member 3 -->
+                    <div class="col-md-4">
+                        <div class="ccard">
+                            <!-- Member 3 Images -->
+                            <div class="img1"><img src="static/images/lg.jpg" alt=""></div>
+                            <div class="img2"><img src="static/images/george.jpg" alt=""></div>
+                            <div class="main-text" style="text-align: center;">
+                                <h2> George El Hayek </h2>
+                                <!-- Member 3 Info -->
+                                <ul class="info-list">
+                                    <li> CMO of Academify </li>
+                                    <li> Born: 12th April 2005</li>
+                                    <li> Hobbies: Gym & Boxing </li>
+                                    <li> Financial Foresight & Fast Thinker </li>
+                                </ul>
+                            </div>
+                            <!-- Member 3 Social media icons -->
+                            <div class="socials">
+                                <i class="fa fa-facebook"></i>
+                                <i class="fa fa-linkedin"></i>
+                                <i class="fa fa-dribble"></i>
+                                <i class="fa fa-twitter"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-     <!-- Code for this button -->
-  <button onclick="topFunction()" id="myBtn" title="Go to top"> &#8593; </button>
-  
-  <script>
-  //Get the button
-  var mybutton = document.getElementById("myBtn");
-  
-  // When the user scrolls down 20px from the top of the document, show the button
-  window.onscroll = function() {scrollFunction()};
-  
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      mybutton.style.display = "block";
-    } else {
-      mybutton.style.display = "none";
+    
+    <!-- Button to scroll to top -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top"> &#8593; </button>
+    
+    <script>
+    // Get the button
+    var mybutton = document.getElementById("myBtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
     }
-  }
-  
-  
-  // When the user clicks on the button, scroll to the top of the document
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-  </script>
-
-
-
-
-    <!-- Bootstrap core JS-->
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+    
+    <!-- Bootstrap core JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
+    <!-- Core theme JS -->
     <script src="js/scripts.js"></script>
     {% endblock content %}
 </body>

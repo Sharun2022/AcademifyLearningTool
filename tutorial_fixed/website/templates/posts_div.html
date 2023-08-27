@@ -15,7 +15,7 @@
   {% for post in posts %}
   <div class="card border-dark">
     <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/'+ post.user.image_file) }}" alt="Profile Picture">
-    <div class="card-header d-flex justify-content-between align-items-center">
+    <div class="card-header d-flex justify-content-between align-items-center" style="font-weight: 500;">
       <a href="/posts/{{post.user.username}}">{{post.user.username}}</a>
       <div>
         <!-- Display the like count and handle like/unlike buttons -->
@@ -32,14 +32,14 @@
           <!-- Dropdown menu for post author to delete or update post -->
           <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown"></button>
           <ul class="dropdown-menu">
-            <li><a href="/delete-post/{{post.id}}" class="dropdown-item">Delete</a></li>
-            <li><a href="/update-post/{{post.id}}" class="dropdown-item">Update</a></li>
+            <li><a href="/delete-post/{{post.id}}" class="dropdown-item" style="font-weight: 500;">Delete</a></li>
+            <li><a href="/update-post/{{post.id}}" class="dropdown-item" style="font-weight: 500;">Update</a></li>
           </ul>
         </div>
         {% endif %}
       </div>
     </div>
-    <div class="card-body">
+    <div class="card-body" style="font-weight: 500;">
       <!-- Display post title and text -->
       <div class="card-text post-title">{{post.title}}</div>
       <br>
@@ -78,16 +78,16 @@
           <small>View {{post.comments|length}} Comments</small>
         </a>
         {% else %}
-        <small class="text-muted">No Comments</small>
+        <small class="text-muted" style="font-weight: 500;">No Comments</small>
         {% endif %}
       </p>
       <!-- Form to create a new comment -->
       <form class="input-group mb-3" method="POST" action="{{ url_for('views.create_comment', post_id=post.id) }}">
-        <input type="text" id="text" name="text" class="form-control" placeholder="Comment something!">
-        <button type="submit" class="btn btn-primary">Comment</button>
+        <input type="text" id="text" name="text" class="form-control" style="font-weight: 500;" placeholder="Comment something!">
+        <button type="submit" class="btn btn-primary" style="font-weight: 500;">Comment</button>
       </form>
     </div>
-    <div class="card-footer text-muted">{{post.date_created}}</div>
+    <div class="card-footer text-muted" style="font-weight: 500;">{{post.date_created}}</div>
   </div>
   <br>
   {% endfor %}

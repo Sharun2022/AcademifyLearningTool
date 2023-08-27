@@ -9,9 +9,9 @@
     <form method="POST">
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4"> Academify - Create Your Account </legend>
+            <legend class="border-bottom mb-4" style="font-weight: 900; text-transform: uppercase; color:darkgreen"> Academify - Create Your Account </legend>
             <!-- Username field -->
-            <div class="form-group">
+            <div class="form-group" style="font-weight: 500;">
                 {{ form.username.label(class="form-control-label") }}
 
                 {% if form.username.errors %}
@@ -26,7 +26,7 @@
                 {% endif %}
             </div>
             <!-- Email field -->
-            <div class="form-group">
+            <div class="form-group" style="font-weight: 500;">
                 {{ form.email.label(class="form-control-label") }}
                 {% if form.email.errors %}
                     {{ form.email(class="form-control form-control-lg is-invalid") }}
@@ -40,7 +40,7 @@
                 {% endif %}
             </div>
             <!-- Password field -->
-            <div class="form-group">
+            <div class="form-group" style="font-weight: 500;">
                 {{ form.password.label(class="form-control-label") }}
                 {% if form.password.errors %}
                     {{ form.password(class="form-control form-control-lg is-invalid") }}
@@ -54,7 +54,7 @@
                 {% endif %}
             </div>
             <!-- Confirm Password field -->
-            <div class="form-group">
+            <div class="form-group" style="font-weight: 500;">
                 {{ form.confirm_password.label(class="form-control-label") }}
                 {% if form.confirm_password.errors %}
                     {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
@@ -70,15 +70,15 @@
         </fieldset>
     <br>
         <!-- Submit button -->
-        <div class="form-group">
+        <div class="form-group" style="font-weight: 500;">
             {{ form.submit(class="btn btn-outline-info") }}
         </div>
     </form>
 </div>
 <!-- Section for link to login if user has an account -->
 <div class="border-top pt-3">
-    <small class="text-muted">
-        Already Have An Account? <a class="ml-2" href="{{ url_for('auth.login') }}">Sign In</a>
+    <small class="text-muted" style="font-weight: 500;">
+        Already Have An Account? <a class="ml-2" style="font-weight: 500;" href="{{ url_for('auth.login') }}">Sign In</a>
     </small>
 </div>
 <br>

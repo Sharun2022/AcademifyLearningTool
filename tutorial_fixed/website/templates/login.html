@@ -8,9 +8,13 @@
 
 {% block content %}
 <form method="POST">
-  <h3 style="text-align: center;">Login</h3>
-  <div class="form-group">
+  <!-- Form for user login -->
+  <h3 style="text-align: center; font-weight: 900; text-transform: uppercase;">Login</h3>
+  <!-- Heading for the login section -->
+  <div class="form-group" style="font-weight: 500;">
+    <!-- Form group to contain form elements with common styling -->
     <label for="email">Email Address</label>
+    <!-- Label for the email input field -->
     <input
       type="text"
       id="email"
@@ -21,11 +25,12 @@
     <!-- Input field for entering the user's email -->
 
     <label for="password">Password</label>
+    <!-- Label for the password input field -->
     <input
       type="password"
       id="password"
       name="password"
-      class="form-control"
+      class="form-control" 
       placeholder="Enter Password"
     >
     <!-- Input field for entering the user's password -->
@@ -38,6 +43,7 @@
     </div>
   </div>
 </form>
+<!-- End of login form -->
 <br>
 <br>
 <br>
@@ -47,4 +53,5 @@
 <br>
 <br>
 {% endblock %}
+<!-- End of content block -->
 </html>

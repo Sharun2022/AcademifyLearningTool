@@ -1,59 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Extends another file named "base.html" -->
+<!-- Extends another HTML template named "base.html" -->
 {% extends "base.html" %} 
 <!-- Defined a block named "title" and set the title of the page to Home -->
-{% block title %}Home{% endblock %} {% block content%}
+{% block title %}Home{% endblock %}
 
+{% block content %}
+<!-- Content section -->
 <div class="content-section">
+  <!-- Form for creating a new post -->
   <form method="POST">
-      {{ form.hidden_tag() }}
-      <fieldset class="form-group">
-        <!-- Title for the form. -->
-          <legend class="border-bottom mb-4 d-flex justify-content-center" style="font-weight: 900; text-transform: uppercase;">Create a Post</legend>
-          <div class="form-group">
-            <!-- Label for the title field-->
-              {{ form.title.label(class="form-control-label", style="font-weight: 500;") }}
-              {% if form.title.errors %}
-                  {{ form.title(class="form-control form-control-lg is-invalid") }}
-                  <!-- Invalid feedback for title errors -->
-                  <div class="invalid-feedback">
-                      {% for error in form.title.errors %}
-                          <span>{{ error }}</span>
-                      {% endfor %}
-                  </div>
-              {% else %}
-                  {{ form.title(class="form-control form-control-lg") }}
-              {% endif %}
+    <!-- Hidden tag for form -->
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <!-- Title for the form -->
+      <legend class="border-bottom mb-4 d-flex justify-content-center" style="font-weight: 900; text-transform: uppercase;">
+        Create a Post
+      </legend>
+      <div class="form-group">
+        <!-- Label for the title field-->
+        {{ form.title.label(class="form-control-label", style="font-weight: 500;") }}
+        {% if form.title.errors %}
+          <!-- Display title field with error styling -->
+          {{ form.title(class="form-control form-control-lg is-invalid") }}
+          <!-- Invalid feedback for title errors -->
+          <div class="invalid-feedback">
+            {% for error in form.title.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
           </div>
-
-          <div class="form-group">
-            <!-- Label for the text field-->
-              {{ form.text.label(class="form-control-label", style="font-weight: 500;") }}
-              {% if form.text.errors %}
-                  {{ form.text(class="form-control form-control-lg is-invalid") }}
-                <!-- Invalid feedback for title errors -->
-                  <div class="invalid-feedback">
-                      {% for error in form.text.errors %}
-                          <span>{{ error }}</span>
-                      {% endfor %}
-                  </div>
-              {% else %}
-                  {{ form.text(class="form-control form-control-lg") }}
-              {% endif %}
-          </div>
-      </fieldset>
-      <br>
-      <div class="form-group  d-flex justify-content-center">
-        <!-- Submit buttom for the create post -->
-          {{ form.submit(class="btn btn-outline-info", style="font-weight: 500;") }}
+        {% else %}
+          <!-- Display title field without error styling -->
+          {{ form.title(class="form-control form-control-lg") }}
+        {% endif %}
       </div>
-      <br>
-      <br>
+      <div class="form-group">
+        <!-- Label for the text field-->
+        {{ form.text.label(class="form-control-label", style="font-weight: 500;") }}
+        {% if form.text.errors %}
+          <!-- Display text field with error styling -->
+          {{ form.text(class="form-control form-control-lg is-invalid") }}
+          <!-- Invalid feedback for text errors -->
+          <div class="invalid-feedback">
+            {% for error in form.text.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% else %}
+          <!-- Display text field without error styling -->
+          {{ form.text(class="form-control form-control-lg") }}
+        {% endif %}
+      </div>
+    </fieldset>
+    <br>
+    <div class="form-group d-flex justify-content-center">
+      <!-- Submit button for creating a post -->
+      {{ form.submit(class="btn btn-outline-info", style="font-weight: 500;") }}
+    </div>
+    <br>
+    <br>
   </form>
 </div>
+<!-- Back button to return to the blog page -->
 <div style="text-align: center;">
-  <!-- Back button to return to the blog page -->
   <a href="/blog" class="btn btn-primary btn-lg" style="font-weight: 500;">Back</a>
 </div>
 <!-- Closes the main content block -->
