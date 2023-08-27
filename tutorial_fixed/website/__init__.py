@@ -1,5 +1,20 @@
-"""This module initializes a Flask app and sets up a SQLite database."""
+"""
+Flask Application Package Initialization.
 
+This module serves as the package initializer for the Flask application.
+It sets up the main Flask app instance,
+configures app-wide settings, initializes extensions, and registers blueprints.
+
+Attributes:
+    None
+
+Functions:
+    create_app(): Creates and configures the main Flask app instance.
+    create_database(app): Creates the database if it doesn't exist.
+
+"""
+
+# Import necessary modules and packages
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
@@ -17,11 +32,15 @@ def create_app():
 
     # Configure app settings
     app.config['SECRET_KEY'] = "helloworld"  # Secret key for session security
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
-    # SQLite database URI
-    db.init_app(app)  # Initialize the SQLAlchemy database with the app
 
-    # Import and register blueprints (views and authentication)
+    # Set the URI for the SQLite database
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+
+    # Initialize the SQLAlchemy database with the Flask app
+    db.init_app(app)
+
+    # Import and register blueprints for
+    # different app sections (views and authentication)
     from .views import views
     from .auth import auth
     app.register_blueprint(views, url_prefix="/")
@@ -35,7 +54,9 @@ def create_app():
 
     # Initialize and configure the Flask LoginManager
     login_manager = LoginManager()
-    login_manager.login_view = "auth.login"  # Set the login view
+
+    # Set the login view to redirect unauthorized users to the login page
+    login_manager.login_view = "auth.login"
     login_manager.init_app(app)
 
     # Define a user loader function for the LoginManager
@@ -48,6 +69,8 @@ def create_app():
 
 def create_database(app):
     """Create the database if it doesn't exist."""
+    # Check if the database file doesn't exist
     if not path.exists("website/" + DB_NAME):
-        db.create_all(app=app)  # Create database tables
+        # Create database tables based on defined models
+        db.create_all(app=app)
         print("Created database!")

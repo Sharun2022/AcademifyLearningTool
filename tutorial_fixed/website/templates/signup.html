@@ -4,66 +4,96 @@
 {% extends "base.html" %} 
 <!-- Defined a block named "title" and set the title of the page to Sign Up -->
 {% block title %}Sign Up{% endblock %}
+
 {% block content %}
+<!-- Start of content section -->
 <div class="content-section">
     <form method="POST">
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
+            <!-- Legend for the form, providing a title for the form section -->
             <legend class="border-bottom mb-4" style="font-weight: 900; text-transform: uppercase; color:darkgreen"> Academify - Create Your Account </legend>
+
             <!-- Username field -->
             <div class="form-group" style="font-weight: 500;">
+                <!-- Label for the username input -->
                 {{ form.username.label(class="form-control-label") }}
 
+                <!-- Check if there are errors for the username input -->
                 {% if form.username.errors %}
+                    <!-- If errors exist, display the input with error styling -->
                     {{ form.username(class="form-control form-control-lg is-invalid") }}
                     <div class="invalid-feedback">
+                        <!-- Loop through each error and display it -->
                         {% for error in form.username.errors %}
                             <span>{{ error }}</span>
                         {% endfor %}
                     </div>
                 {% else %}
+                    <!-- If no errors, display the input normally -->
                     {{ form.username(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
+            
             <!-- Email field -->
             <div class="form-group" style="font-weight: 500;">
+                <!-- Label for the email input -->
                 {{ form.email.label(class="form-control-label") }}
+                
+                <!-- Check if there are errors for the email input -->
                 {% if form.email.errors %}
+                    <!-- If errors exist, display the input with error styling -->
                     {{ form.email(class="form-control form-control-lg is-invalid") }}
                     <div class="invalid-feedback">
+                        <!-- Loop through each error and display it -->
                         {% for error in form.email.errors %}
                             <span>{{ error }}</span>
                         {% endfor %}
                     </div>
                 {% else %}
+                    <!-- If no errors, display the input normally -->
                     {{ form.email(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
+            
             <!-- Password field -->
             <div class="form-group" style="font-weight: 500;">
+                <!-- Label for the password input -->
                 {{ form.password.label(class="form-control-label") }}
+                
+                <!-- Check if there are errors for the password input -->
                 {% if form.password.errors %}
+                    <!-- If errors exist, display the input with error styling -->
                     {{ form.password(class="form-control form-control-lg is-invalid") }}
                     <div class="invalid-feedback">
+                        <!-- Loop through each error and display it -->
                         {% for error in form.password.errors %}
                             <span>{{ error }}</span>
                         {% endfor %}
                     </div>
                 {% else %}
+                    <!-- If no errors, display the input normally -->
                     {{ form.password(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
+            
             <!-- Confirm Password field -->
             <div class="form-group" style="font-weight: 500;">
+                <!-- Label for the confirm password input -->
                 {{ form.confirm_password.label(class="form-control-label") }}
+                
+                <!-- Check if there are errors for the confirm password input -->
                 {% if form.confirm_password.errors %}
+                    <!-- If errors exist, display the input with error styling -->
                     {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
                     <div class="invalid-feedback">
+                        <!-- Loop through each error and display it -->
                         {% for error in form.confirm_password.errors %}
                             <span>{{ error }}</span>
                         {% endfor %}
                     </div>
                 {% else %}
+                    <!-- If no errors, display the input normally -->
                     {{ form.confirm_password(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
@@ -75,6 +105,8 @@
         </div>
     </form>
 </div>
+<!-- End of content section -->
+
 <!-- Section for link to login if user has an account -->
 <div class="border-top pt-3">
     <small class="text-muted" style="font-weight: 500;">
@@ -83,3 +115,4 @@
 </div>
 <br>
 {% endblock %}
+</html>

@@ -7,6 +7,7 @@
 {% block title %}Home{% endblock %} 
 
 {% block content %}
+<!-- Display the header for the page using a block -->
 <h1 class="text-center">
   <!-- Defined a block named "header" and set the header content to "Posts" -->
   {% block header %}Posts{% endblock %}
@@ -14,8 +15,10 @@
 <div id="posts">
   {% for post in posts %}
   <div class="card border-dark">
+    <!-- Display user profile picture in a rounded circle -->
     <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/'+ post.user.image_file) }}" alt="Profile Picture">
     <div class="card-header d-flex justify-content-between align-items-center" style="font-weight: 500;">
+      <!-- Display the post author's username and handle like/unlike buttons -->
       <a href="/posts/{{post.user.username}}">{{post.user.username}}</a>
       <div>
         <!-- Display the like count and handle like/unlike buttons -->
@@ -23,15 +26,17 @@
           {{ post.likes|length }}
         </span> 
         {% if user.id in post.likes|map(attribute="author")|list %}
+        <!-- Display filled thumbs-up icon if user has liked the post, otherwise outline icon -->
         <i class="fas fa-thumbs-up" id="like-button-{{post.id}}" onclick="like({{post.id}})"></i>
         {% else %}
         <i class="far fa-thumbs-up" id="like-button-{{post.id}}" onclick="like({{post.id}})"></i>
         {% endif %}
+        <!-- Display delete and update options for post author -->
         {% if user.id == post.author %}
         <div class="btn-group">
-          <!-- Dropdown menu for post author to delete or update post -->
           <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown"></button>
           <ul class="dropdown-menu">
+            <!-- Dropdown menu with options to delete or update the post -->
             <li><a href="/delete-post/{{post.id}}" class="dropdown-item" style="font-weight: 500;">Delete</a></li>
             <li><a href="/update-post/{{post.id}}" class="dropdown-item" style="font-weight: 500;">Update</a></li>
           </ul>
@@ -52,15 +57,17 @@
             <!-- Display comments for the post -->
             <div class="d-flex justify-content-between align-items-center">
               <div>
+                <!-- Display comment author's username and comment text -->
                 <a href="/posts/{{comment.user.username}}">{{comment.user.username}}</a>: {{comment.text}}
               </div>
               <div>
-                <!-- Display delete option for comment author and post author -->
+                <!-- Display comment date and delete option for comment author and post author -->
                 <small class="text-muted">{{comment.date_created}}</small>
                 {% if user.id == comment.author or user.id == post.author %}
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown"></button>
                   <ul class="dropdown-menu">
+                    <!-- Dropdown menu option to delete the comment -->
                     <li><a href="/delete-comment/{{comment.id}}" class="dropdown-item">Delete</a></li>
                   </ul>
                 </div>
@@ -87,6 +94,7 @@
         <button type="submit" class="btn btn-primary" style="font-weight: 500;">Comment</button>
       </form>
     </div>
+    <!-- Display the post's date of creation in the footer -->
     <div class="card-footer text-muted" style="font-weight: 500;">{{post.date_created}}</div>
   </div>
   <br>
@@ -115,4 +123,5 @@
 {% endblock %} 
 
 {% endblock %}
+<!-- End of content block -->
 </html>
